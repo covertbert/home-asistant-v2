@@ -1,4 +1,6 @@
 *
 !*.yaml
-!.gitignore
 secrets.yaml
+!.gitignore
+!www
+!www/*.js
