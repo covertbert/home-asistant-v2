@@ -6,13 +6,6 @@ default_config:
 frontend:
   themes: !include_dir_merge_named themes
 
-octopusagile:
-  region_code: "G"
-  mpan: !secret octopus_mpan  
-  serial: !secret octopus_serial  
-  auth: !secret octopus_api_key  
-  startdate: "2024-01-01"
-
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
