@@ -16,10 +16,6 @@
               entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
               above: 0.15
           sequence:
-            - service: persistent_notification.create
-              metadata: {}
-              data:
-                message: Above
             - service: input_boolean.turn_off
               target:
                 entity_id:
@@ -30,10 +26,6 @@
               entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
               below: 0.15
           sequence:
-            - service: persistent_notification.create
-              metadata: {}
-              data:
-                message: Below
             - service: input_boolean.turn_on
               metadata: {}
               data: {}
