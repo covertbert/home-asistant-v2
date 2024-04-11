@@ -4,6 +4,7 @@
 # Except all yaml files
 !automations
 !integrations
+!themes
 !**/*.yaml
 
 # But including secrets.yaml
