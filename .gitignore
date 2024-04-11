@@ -1,6 +1,16 @@
+# Ignore everything
 *
-!*.yaml
+
+# Except all yaml files
+!**
+!**/*.yaml
+
+# But including secrets.yaml
 secrets.yaml
-!.gitignore
+
+# And except JS files in www
 !www
 !www/*.js
+
+# And except other miscellaneous files
+!.gitignore
