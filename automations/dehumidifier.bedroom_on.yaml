@@ -1,5 +1,4 @@
-- id: "1712848607015"
-  alias: Dehumidifier - Bedroom - On
+- alias: Dehumidifier - Bedroom - On
   mode: single
   trigger:
     - platform: state
