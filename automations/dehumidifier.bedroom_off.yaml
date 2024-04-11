@@ -1,0 +1,26 @@
+- id: "1712849066017"
+  alias: Dehumidifier - Bedroom - Off
+  mode: single
+  trigger:
+    - platform: state
+      entity_id:
+        - input_boolean.cheap_electricity
+      from: "on"
+      to: "off"
+  condition:
+    - condition: time
+      after: 08:00:00
+      before: "21:00:00"
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
+        - sun
+  action:
+    - service: switch.turn_off
+      target:
+        entity_id:
+          - switch.dehumidifier_bedroom_switch

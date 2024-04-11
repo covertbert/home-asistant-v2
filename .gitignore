@@ -16,3 +16,5 @@ secrets.yaml
 
 # And except other miscellaneous files
 !.gitignore
+!.prettierignore
+!.prettierrc
