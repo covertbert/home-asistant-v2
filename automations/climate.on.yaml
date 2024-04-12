@@ -1,0 +1,15 @@
+- alias: Climate On
+  trigger:
+    - platform: numeric_state
+      entity_id:
+        - sensor.met_office_kinder_low_temperature_3_hourly
+      below: 18
+  action:
+    - service: climate.turn_on
+      target:
+        floor_id:
+          - basement
+          - ground_floor
+          - first_floor
+          - attic
+  mode: single
