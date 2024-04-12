@@ -1,4 +1,5 @@
 - alias: Climate On
+  mode: single
   trigger:
     - platform: numeric_state
       entity_id:
@@ -12,4 +13,3 @@
           - ground_floor
           - first_floor
           - attic
-  mode: single
