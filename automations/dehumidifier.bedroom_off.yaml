@@ -4,20 +4,9 @@
     - platform: state
       entity_id:
         - input_boolean.cheap_electricity
-      from: "on"
       to: "off"
-  condition:
-    - condition: time
-      after: 08:00:00
-      before: "21:00:00"
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-        - sat
-        - sun
+    - platform: time
+      at: "21:00:00"
   action:
     - service: switch.turn_off
       target:

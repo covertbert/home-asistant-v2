@@ -1,10 +1,9 @@
-- alias: Dehumidifier - Bedroom - On
+- alias: Dehumidifier - Basement - On
   mode: single
   trigger:
     - platform: state
       entity_id:
         - input_boolean.cheap_electricity
-      from: "off"
       to: "on"
   action:
     - service: switch.turn_on
