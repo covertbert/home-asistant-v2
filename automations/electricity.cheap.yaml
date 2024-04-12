@@ -8,18 +8,18 @@
   action:
     - choose:
         - conditions:
-            - condition: time
-              after: "16:00:00"
-              before: "19:00:00"
+            - condition: numeric_state
+              entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
+              above: 0.15
           sequence:
             - service: input_boolean.turn_off
               target:
                 entity_id:
                   - input_boolean.cheap_electricity
         - conditions:
-            - condition: time
-              before: "16:00:00"
-              after: "19:00:00"
+            - condition: numeric_state
+              entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
+              below: 0.15
           sequence:
             - service: input_boolean.turn_on
               target:
