@@ -1,0 +1,11 @@
+alias: Going Away
+mode: single
+trigger:
+  - platform: state
+    entity_id:
+      - person.bertie
+    to: not_home
+action:
+  - service: notify.mobile_app_berties_iphone
+    data:
+      message: Away
