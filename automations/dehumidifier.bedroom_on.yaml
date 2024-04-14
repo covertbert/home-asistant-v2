@@ -16,6 +16,7 @@
           conditions:
             - condition: time
               after: "08:00:00"
+              before: "21:00:00"
               weekday:
                 - mon
                 - tue
@@ -24,6 +25,7 @@
                 - fri
             - condition: time
               after: "09:00:00"
+              before: "21:00:00"
               weekday:
                 - sun
                 - sat
