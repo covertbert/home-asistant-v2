@@ -5,6 +5,8 @@
 !automations
 !integrations
 !themes
+!.github/
+!.github/workflows
 !**/*.yaml
 
 # Except custom shell scripts
