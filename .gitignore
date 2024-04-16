@@ -7,6 +7,10 @@
 !themes
 !**/*.yaml
 
+# Except custom shell scripts
+!shell
+!shell/*.sh
+
 # But including secrets.yaml
 secrets.yaml
 
