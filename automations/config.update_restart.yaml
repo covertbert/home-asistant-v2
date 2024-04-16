@@ -1,14 +1,30 @@
-alias: Config - Update, Check & Restart
-mode: single
-trigger:
-  - platform: webhook
-    allowed_methods:
-      - POST
-    local_only: false
-    webhook_id: "-Z7gIJKDlN9QKCG6poK8q67CT"
-action:
-  - service: light.toggle
-    metadata: {}
-    data: {}
-    target:
-      entity_id: light.study_corner
+- alias: Config - Update, Check & Restart
+  mode: single
+  trigger:
+    - platform: webhook
+      allowed_methods:
+        - POST
+      local_only: false
+      webhook_id: "-Z7gIJKDlN9QKCG6poK8q67CT"
+  action:
+    - service: light.turn_on
+      data:
+        color_name: darkblue
+        brightness_pct: 100
+      target:
+        entity_id: light.study_corner
+    - service: shell_command.git_pull
+    - service: light.turn_on
+      data:
+        color_name: darkolivegreen
+        brightness_pct: 100
+      target:
+        entity_id: light.study_corner
+    - service: homeassistant.check_config
+    - service: light.turn_on
+      data:
+        brightness_pct: 100
+        kelvin: 3200
+      target:
+        entity_id: light.study_corner
+    - service: homeassistant.restart
