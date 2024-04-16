@@ -9,12 +9,12 @@
 !.github/workflows
 !**/*.yaml
 
+# But including secrets.yaml
+secrets.yaml
+
 # Except custom shell scripts
 !shell
 !shell/*.sh
-
-# But including secrets.yaml
-secrets.yaml
 
 # And except JS files in www
 !www
@@ -24,3 +24,4 @@ secrets.yaml
 !.gitignore
 !.prettierignore
 !.prettierrc
+!README.md
