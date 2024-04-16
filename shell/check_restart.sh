@@ -1,7 +1,5 @@
 #!/bin/sh
 
-cd /root/config || exit 1
-
 git pull || exit 1
 
 # Run the `ha core check` command
