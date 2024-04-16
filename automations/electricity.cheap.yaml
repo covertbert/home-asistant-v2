@@ -10,7 +10,7 @@
         - conditions:
             - condition: numeric_state
               entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
-              above: 0.15
+              above: 0.16
           sequence:
             - service: input_boolean.turn_off
               target:
@@ -19,7 +19,7 @@
         - conditions:
             - condition: numeric_state
               entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
-              below: 0.15
+              below: 0.16
           sequence:
             - service: input_boolean.turn_on
               target:
