@@ -12,4 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger deploy
-        run: curl -X POST "https://hooks.nabu.casa/${{ secrets.HA_CONFIG_DEPLOY_URI }}"
+        shell: bash
+        env: # Set the secret as an input
+          HA_CONFIG_DEPLOY_URI: ${{ secrets.HA_CONFIG_DEPLOY_URI }}
+        run: curl -X POST "https://hooks.nabu.casa/$HA_CONFIG_DEPLOY_URI"
