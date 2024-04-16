@@ -1,0 +1,9 @@
+- alias: Workstation - Off
+  mode: single
+  trigger:
+    - platform: time
+      at: "17:30:00"
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.study_workstation
