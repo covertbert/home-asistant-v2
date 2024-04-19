@@ -1,19 +1,19 @@
 - alias: "Toggle input_boolean based on temperature"
   trigger:
     - platform: numeric_state
-      entity_id: sensor.your_temperature_sensor
+      entity_id: sensor.met_office_kinder_low_temperature_3_hourly
   action:
     - choose:
         - conditions:
             - condition: numeric_state
-              entity_id: sensor.your_temperature_sensor
+              entity_id: sensor.met_office_kinder_low_temperature_3_hourly
               above: 20
           sequence:
             - service: input_boolean.turn_on
               entity_id: input_boolean.three_hourly_warm
         - conditions:
             - condition: numeric_state
-              entity_id: sensor.your_temperature_sensor
+              entity_id: sensor.met_office_kinder_low_temperature_3_hourly
               below: 20
           sequence:
             - service: input_boolean.turn_off
