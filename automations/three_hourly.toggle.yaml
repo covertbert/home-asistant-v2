@@ -1,0 +1,20 @@
+- alias: "Toggle input_boolean based on temperature"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.your_temperature_sensor
+  action:
+    - choose:
+        - conditions:
+            - condition: numeric_state
+              entity_id: sensor.your_temperature_sensor
+              above: 20
+          sequence:
+            - service: input_boolean.turn_on
+              entity_id: input_boolean.three_hourly_warm
+        - conditions:
+            - condition: numeric_state
+              entity_id: sensor.your_temperature_sensor
+              below: 20
+          sequence:
+            - service: input_boolean.turn_off
+              entity_id: input_boolean.three_hourly_warm

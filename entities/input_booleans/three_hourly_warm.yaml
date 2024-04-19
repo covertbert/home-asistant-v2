@@ -1,0 +1,5 @@
+---
+three_hourly_warm:
+  name: Three Hourly - Warm
+  description: "The Met Office 3 Hourly temperature is high enough to be considered warm outside"
+  icon: mdi:heat-wave
