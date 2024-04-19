@@ -1,0 +1,10 @@
+---
+- alias: Home Mode
+  trigger:
+    platform: state
+    entity_id: group.family
+    to: home
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.home_state

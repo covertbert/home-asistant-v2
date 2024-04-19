@@ -7,6 +7,7 @@
 !scripts
 !entities
 !entities/input_booleans
+!entities/groups
 !integrations
 !themes
 !.github/
