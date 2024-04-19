@@ -2,6 +2,10 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.met_office_kinder_low_temperature_3_hourly
+      above: 20
+    - platform: numeric_state
+      entity_id: sensor.met_office_kinder_low_temperature_3_hourly
+      below: 20
   action:
     - choose:
         - conditions:
