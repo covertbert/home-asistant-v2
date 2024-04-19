@@ -9,7 +9,6 @@ jobs:
   full_deploy:
     name: Full Deploy
     runs-on: ubuntu-latest
-    if: contains(github.event.head_commit.modified, 'integrations/') || contains(github.event.head_commit.modified, 'configuration.yaml')
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -17,15 +16,3 @@ jobs:
         shell: bash
         run: |
           curl -X POST "https://hooks.nabu.casa/${{ secrets.HA_CONFIG_DEPLOY_URI}}"
-
-  quick_deploy:
-    name: Quick Deploy
-    runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.head_commit.modified, 'integrations/') || !contains(github.event.head_commit.modified, 'configuration.yaml') }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Trigger Quick Deploy
-        shell: bash
-        run: |
-          curl -X POST "https://hooks.nabu.casa/${{ secrets.HA_CONFIG_RELOAD_URI}}"
