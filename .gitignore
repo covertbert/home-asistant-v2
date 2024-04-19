@@ -3,6 +3,8 @@
 
 # Except all yaml files
 !automations
+!entities
+!entities/input_booleans
 !integrations
 !themes
 !.github/
