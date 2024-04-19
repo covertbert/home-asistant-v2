@@ -3,6 +3,8 @@
 
 # Except all yaml files
 !automations
+!scenes
+!scripts
 !entities
 !entities/input_booleans
 !integrations
