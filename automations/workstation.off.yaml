@@ -6,4 +6,4 @@
   action:
     - service: light.turn_off
       target:
-        entity_id: light.study_workstation
+        entity_id: switch.study_workstation_switch
