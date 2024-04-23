@@ -21,6 +21,8 @@
 !entities/input_booleans
 !entities/groups
 !integrations
+!schedules
+!schedules/study
 !themes
 !.github/
 !.github/workflows
