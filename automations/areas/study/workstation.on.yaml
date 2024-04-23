@@ -4,13 +4,10 @@
     - platform: time
       at: "08:30:00"
   condition:
-    - condition: time
-      weekday:
-        - tue
-        - wed
-        - thu
-        - fri
+    - condition: state
+      entity_id: schedule.study_wfh
+      state: "on"
   action:
-    - service: light.turn_on
+    - service: switch.turn_on
       target:
         entity_id: switch.study_workstation_switch

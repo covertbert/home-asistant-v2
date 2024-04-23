@@ -4,6 +4,6 @@
     - platform: time
       at: "17:30:00"
   action:
-    - service: light.turn_off
+    - service: switch.turn_off
       target:
         entity_id: switch.study_workstation_switch
