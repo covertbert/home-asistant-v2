@@ -1,4 +1,4 @@
 ---
 three_hourly_warm:
-  name: Three Hourly - Warm
+  name: Warm Temperature Forecast
   icon: mdi:heat-wave
