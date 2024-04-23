@@ -10,7 +10,7 @@ function copyStubbedData() {
 }
 
 function cleanWorkingDirectory() {
-  rm -rf .cloud .storage .HA_VERSION home-assistant_v2.db home-assistant.log secrets.yaml
+  rm -rf .cloud .storage .HA_VERSION home-assistant_v2.db home-assistant.log secrets.yaml config
 }
 
 function checkHaConfig() {
