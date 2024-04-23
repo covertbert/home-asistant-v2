@@ -5,6 +5,9 @@
     - platform: state
       entity_id: input_boolean.home_state
       to: "off"
+    - platform: state
+      entity_id: binary_sensor.study_window_opening
+      to: "off"
     # WFH schedule ended
     - platform: state
       entity_id: schedule.study_wfh
@@ -17,6 +20,10 @@
     # Window is closed
     - condition: state
       entity_id: binary_sensor.study_window_opening
+      state: "off"
+    # WFH schedule is inactive
+    - condition: state
+      entity_id: schedule.study_wfh
       state: "off"
     # 3 Hourly Forecast is not "warm"
     - condition: state
