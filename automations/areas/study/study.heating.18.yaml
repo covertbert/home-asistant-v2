@@ -14,10 +14,6 @@
       entity_id: input_boolean.three_hourly_warm
       to: "off"
   condition:
-    # WFH schedule is inactive
-    - condition: state
-      entity_id: schedule.study_wfh
-      state: "off"
     # Window is closed
     - condition: state
       entity_id: binary_sensor.study_window_opening
