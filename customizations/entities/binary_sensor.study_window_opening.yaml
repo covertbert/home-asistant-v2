@@ -1,4 +1,0 @@
----
-binary_sensor.study_window_opening:
-  icon_template: >
-    mdi:window-{{ if(is_state('binary_sensor.study_window_opening', 'off'), 'closed', 'open') }}
