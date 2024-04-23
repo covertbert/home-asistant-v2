@@ -1,14 +1,15 @@
-- climate_study_wfh:
-    name: "Study - WFH"
-    tuesday:
-      - from: "07:00:00"
-        to: "18:00:00"
-    wednesday:
-      - from: "07:00:00"
-        to: "18:00:00"
-    thursday:
-      - from: "07:00:00"
-        to: "18:00:00"
-    friday:
-      - from: "07:00:00"
-        to: "18:00:00"
+---
+climate_study_wfh:
+  name: "Study - WFH"
+  tuesday:
+    - from: "07:00:00"
+      to: "18:00:00"
+  wednesday:
+    - from: "07:00:00"
+      to: "18:00:00"
+  thursday:
+    - from: "07:00:00"
+      to: "18:00:00"
+  friday:
+    - from: "07:00:00"
+      to: "18:00:00"
