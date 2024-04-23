@@ -3,6 +3,18 @@
 
 # Except all yaml files
 !automations
+!automations/areas
+!automations/areas/attic
+!automations/areas/bathroom
+!automations/areas/basement
+!automations/areas/bedroom
+!automations/areas/hallway
+!automations/areas/kitchen
+!automations/areas/landing
+!automations/areas/study
+!automations/home
+!automations/sensors
+!automations/system
 !scenes
 !scripts
 !entities
