@@ -1,0 +1,13 @@
+---
+- alias: Update Available Notification
+  trigger:
+    - platform: state
+      entity_id:
+        - update.home_assistant_core_update
+        - update.home_assistant_operating_system_update
+        - update.home_assistant_supervisor_update
+      to: "on"
+  action:
+    - service: notify.mobile_app_berties_iphone
+      data:
+        message: "🛵 {{ state_attr(trigger.entity_id, 'friendly_name') }}"

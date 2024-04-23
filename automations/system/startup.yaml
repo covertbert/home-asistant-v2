@@ -1,0 +1,9 @@
+---
+- alias: Hass Startup Notification
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - service: notify.mobile_app_berties_iphone
+      data:
+        message: 🌵 Home Assistant has started

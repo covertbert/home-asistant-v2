@@ -1,0 +1,9 @@
+---
+- alias: Hass Startup Notification
+  trigger:
+    - platform: homeassistant
+      event: shutdown
+  action:
+    - service: notify.mobile_app_berties_iphone
+      data:
+        message: 🌶 Home Assistant is shutting down
