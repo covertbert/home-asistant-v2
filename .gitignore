@@ -24,6 +24,7 @@
 !schedules
 !schedules/study
 !themes
+!.stubs
 !.github/
 !.github/workflows
 !**/*.yaml
@@ -43,4 +44,4 @@ secrets.yaml
 !.gitignore
 !.prettierignore
 !.prettierrc
-!README.md
+!README.

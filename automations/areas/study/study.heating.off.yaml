@@ -1,0 +1,11 @@
+- alias: Study - Heating - 20
+  mode: single
+  trigger:
+    # Study window opened
+    - platform: state
+      entity_id: binary_sensor.study_window_opening
+      to: "on"
+  action:
+    - service: climate.turn_off
+      target:
+        entity_id: climate.study

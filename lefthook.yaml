@@ -4,3 +4,5 @@ pre-commit:
     prettier:
       run: prettier --write .
       stage_fixed: true
+    config:
+      run: ./shell/config_check.sh

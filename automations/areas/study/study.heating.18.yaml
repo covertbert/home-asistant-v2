@@ -1,0 +1,18 @@
+- alias: Study - Heating - 18
+  mode: single
+  trigger:
+    # Leaving home triggered
+    - platform: state
+      entity_id:
+        - input_boolean.home_state
+      to: "off"
+    # WFH schedule ended
+    - platform: state
+      entity_id: schedule.study_wfh
+      to: "off"
+  action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.study
+      data:
+        temperature: 18
