@@ -27,9 +27,8 @@
       entity_id: binary_sensor.study_window_opening
       state: "off"
   action:
-    action:
-      - service: climate.set_temperature
-        target:
-          entity_id: climate.study
-        data:
-          temperature: 20
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.study
+      data:
+        temperature: 20
