@@ -20,6 +20,7 @@
 !entities
 !entities/input_booleans
 !entities/groups
+!entities/device_trackers
 !integrations
 !schedules
 !schedules/study
