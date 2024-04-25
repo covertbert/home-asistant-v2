@@ -23,9 +23,10 @@
 !entities/device_trackers
 !integrations
 !schedules
-!schedules/study
-!schedules/bedroom
+!schedules/attic
 !schedules/bathroom
+!schedules/bedroom
+!schedules/study
 !themes
 !.stubs
 !.github/
