@@ -5,18 +5,14 @@
     - platform: state
       entity_id: input_boolean.home_state
       to: "on"
-      # Study window closed
+    # Study window closed
     - platform: state
       entity_id: binary_sensor.study_window_opening
       to: "off"
-      # WFH schedule started
+    # WFH schedule started
     - platform: state
       entity_id: schedule.study_wfh
       to: "on"
-    # 3 Hourly Forecast becomes "cold"
-    - platform: state
-      entity_id: input_boolean.three_hourly_warm
-      to: "off"
   condition:
     # People are home
     - condition: state
@@ -29,10 +25,6 @@
     # Window is closed
     - condition: state
       entity_id: binary_sensor.study_window_opening
-      state: "off"
-    # 3 Hourly Forecast is not "warm"
-    - condition: state
-      entity_id: input_boolean.three_hourly_warm
       state: "off"
   action:
     - service: climate.set_temperature
