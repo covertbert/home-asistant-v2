@@ -1,1 +1,3 @@
 - platform: bt_smarthub
+  new_device_defaults:
+    track_new_devices: true
