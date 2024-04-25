@@ -1,0 +1,32 @@
+---
+bathroom_boost:
+  name: "Bathroom - Boost"
+  monday:
+    - from: "07:00:00"
+      to: "07:45:00"
+  tuesday:
+    - from: "05:55:00"
+      to: "06:25:00"
+    - from: "18:00:00"
+      to: "18:30:00"
+  wednesday:
+    - from: "05:55:00"
+      to: "06:25:00"
+    - from: "18:00:00"
+      to: "18:30:00"
+  thursday:
+    - from: "07:15:00"
+      to: "07:45:00"
+    - from: "18:00:00"
+      to: "18:30:00"
+  friday:
+    - from: "07:15:00"
+      to: "07:45:00"
+    - from: "18:00:00"
+      to: "18:30:00"
+  saturday:
+    - from: "18:00:00"
+      to: "18:30:00"
+  sunday:
+    - from: "18:00:00"
+      to: "18:30:00"
