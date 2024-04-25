@@ -9,10 +9,6 @@
     - platform: state
       entity_id: schedule.bedroom_daytime
       to: "on"
-    # 3 Hourly Forecast becomes "cold"
-    - platform: state
-      entity_id: input_boolean.three_hourly_warm
-      to: "off"
   condition:
     # People are home
     - condition: state
@@ -22,10 +18,6 @@
     - condition: state
       entity_id: schedule.bedroom_daytime
       state: "on"
-    # 3 Hourly Forecast is not "warm"
-    - condition: state
-      entity_id: input_boolean.three_hourly_warm
-      state: "off"
   action:
     - service: climate.set_temperature
       target:
