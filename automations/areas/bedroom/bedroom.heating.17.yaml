@@ -1,0 +1,30 @@
+- alias: Bedroom - Heating - 17
+  mode: single
+  trigger:
+    # Leaving home triggered
+    - platform: state
+      entity_id: input_boolean.home_state
+      to: "off"
+    # Daytime schedule ended
+    - platform: state
+      entity_id: schedule.bedroom_daytime
+      to: "off"
+    # 3 Hourly Forecast becomes "cold"
+    - platform: state
+      entity_id: input_boolean.three_hourly_warm
+      to: "off"
+  condition:
+    # Daytime schedule is inactive
+    - condition: state
+      entity_id: schedule.bedroom_daytime
+      state: "off"
+    # 3 Hourly Forecast is not "warm"
+    - condition: state
+      entity_id: input_boolean.three_hourly_warm
+      state: "off"
+  action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.bedroom
+      data:
+        temperature: 17

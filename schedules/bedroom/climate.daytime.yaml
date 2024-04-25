@@ -1,0 +1,24 @@
+---
+bedroom_daytime:
+  name: "Bedroom - Daytime"
+  monday:
+    - from: "06:00:00"
+      to: "20:00:00"
+  tuesday:
+    - from: "06:00:00"
+      to: "20:00:00"
+  wednesday:
+    - from: "06:00:00"
+      to: "20:00:00"
+  thursday:
+    - from: "06:00:00"
+      to: "20:00:00"
+  friday:
+    - from: "06:00:00"
+      to: "20:00:00"
+  saturday:
+    - from: "06:00:00"
+      to: "20:00:00"
+  sunday:
+    - from: "06:00:00"
+      to: "20:00:00"

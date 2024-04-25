@@ -1,10 +1,6 @@
-- alias: Study - Heating - Off
+- alias: Bedroom - Heating - Off
   mode: single
   trigger:
-    # Study window opened
-    - platform: state
-      entity_id: binary_sensor.study_window_opening
-      to: "on"
     # 3 Hourly Forecast becomes "warm"
     - platform: state
       entity_id: input_boolean.three_hourly_warm
@@ -12,4 +8,4 @@
   action:
     - service: climate.turn_off
       target:
-        entity_id: climate.study
+        entity_id: climate.bedroom
