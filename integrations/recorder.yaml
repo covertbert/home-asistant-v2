@@ -1,0 +1,17 @@
+---
+recorder:
+  exclude:
+    domains:
+      - device_tracker
+      - media_player
+      - time_date
+    entity_globs:
+      - sensor.bt_home_hub*
+      - sensor.time*
+      - sensor.sun*
+      - sensor.octopus_energy_a_e94ebeba_wheel_of_fortune*
+      - binary_sensor.octopus_energy_a_e94ebeba_octoplus_saving*
+    entities:
+      - sensor.home_assistant_v2_db
+      - camera.beast_cam
+      - camera.the_front
