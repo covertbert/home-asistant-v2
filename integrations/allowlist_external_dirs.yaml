@@ -1,0 +1,3 @@
+---
+allowlist_external_dirs:
+  - /config
