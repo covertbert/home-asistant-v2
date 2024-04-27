@@ -11,6 +11,7 @@
 !automations/areas/hallway
 !automations/areas/kitchen
 !automations/areas/landing
+!automations/areas/living_room
 !automations/areas/study
 !automations/home
 !automations/sensors
@@ -28,6 +29,7 @@
 !schedules/bathroom
 !schedules/bedroom
 !schedules/hallway
+!schedules/living_room
 !schedules/study
 !themes
 !.stubs
