@@ -1,0 +1,5 @@
+---
+garmin:
+  name: Garmin Control
+  entities:
+    - light.bedroom
