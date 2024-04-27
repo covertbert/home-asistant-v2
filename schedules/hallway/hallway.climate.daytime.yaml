@@ -1,0 +1,24 @@
+---
+hallway_daytime:
+  name: "Hallway - Daytime"
+  monday:
+    - from: "08:30:00"
+      to: "21:00:00"
+  tuesday:
+    - from: "08:30:00"
+      to: "21:00:00"
+  wednesday:
+    - from: "08:30:00"
+      to: "21:00:00"
+  thursday:
+    - from: "08:30:00"
+      to: "21:00:00"
+  friday:
+    - from: "08:30:00"
+      to: "22:00:00"
+  saturday:
+    - from: "09:30:00"
+      to: "22:00:00"
+  sunday:
+    - from: "09:30:00"
+      to: "21:00:00"
