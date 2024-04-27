@@ -2,23 +2,23 @@
 living_room_evening:
   name: "Living Room - Evening"
   monday:
-    - from: "16:30:00"
+    - from: "17:30:00"
       to: "21:00:00"
   tuesday:
-    - from: "16:30:00"
+    - from: "17:30:00"
       to: "21:00:00"
   wednesday:
-    - from: "16:30:00"
+    - from: "17:30:00"
       to: "21:00:00"
   thursday:
-    - from: "16:30:00"
+    - from: "17:30:00"
       to: "21:00:00"
   friday:
-    - from: "16:30:00"
+    - from: "17:30:00"
       to: "22:00:00"
   saturday:
-    - from: "16:30:00"
+    - from: "17:30:00"
       to: "22:00:00"
   sunday:
-    - from: "16:30:00"
+    - from: "17:30:00"
       to: "21:00:00"
