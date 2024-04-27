@@ -1,0 +1,30 @@
+- alias: Home State - Update
+  mode: single
+
+  trigger:
+    - platform: state
+      entity_id:
+        - group.family
+
+  action:
+    - choose:
+        # Family comes home
+        - conditions:
+            - condition: state
+              entity_id: group.family
+              state: home
+          sequence:
+            - service: input_boolean.turn_on
+              target:
+                entity_id: input_boolean.home_state
+
+        # Family leaves home
+        - conditions:
+            - condition: state
+              entity_id: group.family
+              state: not_home
+          sequence:
+            - service: input_boolean.turn_off
+              target:
+                entity_id:
+                  - input_boolean.home_state
