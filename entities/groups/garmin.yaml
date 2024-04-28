@@ -3,3 +3,6 @@ garmin:
   name: Garmin Control
   entities:
     - light.bedroom
+    - light.landing
+    - light.living_room
+    - light.study
