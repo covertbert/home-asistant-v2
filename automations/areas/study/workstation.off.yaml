@@ -1,9 +1,0 @@
-- alias: Workstation - Off
-  mode: single
-  trigger:
-    - platform: time
-      at: "17:30:00"
-  action:
-    - service: switch.turn_off
-      target:
-        entity_id: switch.study_workstation_switch

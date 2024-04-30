@@ -1,0 +1,31 @@
+- alias: Workstation - Toggle
+  mode: single
+
+  trigger:
+    # Schedule state changes
+    - platform: state
+      entity_id:
+        - schedule.study_wfh
+
+  action:
+    - choose:
+        # Schedule is active
+        - conditions:
+            - condition: state
+              entity_id: schedule.study_wfh
+              state: "on"
+          sequence:
+            - service: switch.turn_on
+              target:
+                entity_id: switch.study_workstation_switch
+
+        # Schedule is *not* active
+        - conditions:
+            - condition: state
+              entity_id: schedule.study_wfh
+              state: "off"
+          sequence:
+            - service: switch.turn_off
+              target:
+                entity_id:
+                  - switch.study_workstation_switch
