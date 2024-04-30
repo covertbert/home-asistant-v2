@@ -1,6 +1,6 @@
 ---
-kitchen_daytime:
-  name: "Kitchen - Daytime"
+kitchen_evening:
+  name: "Kitchen - Evening"
   monday:
     - from: "16:00:00"
       to: "21:00:00"

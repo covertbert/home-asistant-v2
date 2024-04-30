@@ -5,7 +5,7 @@
     # Has the state of the schedule just changed
     - platform: state
       entity_id:
-        - schedule.kitchen_daytime
+        - schedule.kitchen_evening
     # Has anyone just come/left home?
     - platform: state
       entity_id:
@@ -19,7 +19,7 @@
         # Daytime schedule is active
         - conditions:
             - condition: state
-              entity_id: schedule.kitchen_daytime
+              entity_id: schedule.kitchen_evening
               state: "on"
           sequence:
             - choose:
@@ -50,7 +50,7 @@
         # Daytime schedule is not active
         - conditions:
             - condition: state
-              entity_id: schedule.kitchen_daytime
+              entity_id: schedule.kitchen_evening
               state: "off"
           sequence:
             - service: climate.set_temperature
