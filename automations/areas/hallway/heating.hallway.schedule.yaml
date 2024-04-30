@@ -1,11 +1,11 @@
-- alias: Living Room - Heating - Schedule
+- alias: Heating - Hallway - Schedule
   mode: single
 
   trigger:
     # Has the state of the schedule just changed
     - platform: state
       entity_id:
-        - schedule.living_room_evening
+        - schedule.hallway_daytime
     # Has anyone just come/left home?
     - platform: state
       entity_id:
@@ -16,10 +16,10 @@
 
   action:
     - choose:
-        # Daytime schedule activated
+        # Daytime schedule is active
         - conditions:
             - condition: state
-              entity_id: schedule.living_room_evening
+              entity_id: schedule.hallway_daytime
               state: "on"
           sequence:
             - choose:
@@ -31,9 +31,9 @@
                   sequence:
                     - service: climate.set_temperature
                       data:
-                        temperature: 22
+                        temperature: 18
                       target:
-                        entity_id: climate.living_room
+                        entity_id: climate.hallway
 
                 # No one is home
                 - conditions:
@@ -45,16 +45,16 @@
                       data:
                         temperature: 17
                       target:
-                        entity_id: climate.living_room
+                        entity_id: climate.hallway
 
-        # Daytime schedule deactivated
+        # Daytime schedule is not active
         - conditions:
             - condition: state
-              entity_id: schedule.living_room_evening
+              entity_id: schedule.hallway_daytime
               state: "off"
           sequence:
             - service: climate.set_temperature
               data:
                 temperature: 17
               target:
-                entity_id: climate.living_room
+                entity_id: climate.hallway

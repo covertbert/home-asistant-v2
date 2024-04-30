@@ -1,4 +1,4 @@
-- alias: Basement - Heating - Schedule
+- alias: Heating - Basement - Schedule
   mode: single
 
   trigger:

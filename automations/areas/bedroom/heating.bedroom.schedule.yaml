@@ -1,4 +1,4 @@
-- alias: Bedroom - Heating - Schedule
+- alias: Heating - Bedroom - Schedule
   mode: single
 
   trigger:

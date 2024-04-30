@@ -1,25 +1,21 @@
-- alias: Hallway - Heating - Schedule
+- alias: Heating - Bathroom - Schedule
   mode: single
 
   trigger:
     # Has the state of the schedule just changed
     - platform: state
       entity_id:
-        - schedule.hallway_daytime
-    # Has anyone just come/left home?
-    - platform: state
-      entity_id:
-        - input_boolean.home_state
+        - schedule.bathroom_boost
     # Has 15 minutes elapsed?
     - platform: time_pattern
       minutes: /15
 
   action:
     - choose:
-        # Daytime schedule is active
+        # Boost schedule is active
         - conditions:
             - condition: state
-              entity_id: schedule.hallway_daytime
+              entity_id: schedule.bathroom_boost
               state: "on"
           sequence:
             - choose:
@@ -31,9 +27,9 @@
                   sequence:
                     - service: climate.set_temperature
                       data:
-                        temperature: 18
+                        temperature: 25
                       target:
-                        entity_id: climate.hallway
+                        entity_id: climate.bathroom
 
                 # No one is home
                 - conditions:
@@ -43,18 +39,18 @@
                   sequence:
                     - service: climate.set_temperature
                       data:
-                        temperature: 17
+                        temperature: 18
                       target:
-                        entity_id: climate.hallway
+                        entity_id: climate.bathroom
 
-        # Daytime schedule is not active
+        # Boost schedule is not active
         - conditions:
             - condition: state
-              entity_id: schedule.hallway_daytime
+              entity_id: schedule.bathroom_boost
               state: "off"
           sequence:
             - service: climate.set_temperature
               data:
-                temperature: 17
+                temperature: 18
               target:
-                entity_id: climate.hallway
+                entity_id: climate.bathroom

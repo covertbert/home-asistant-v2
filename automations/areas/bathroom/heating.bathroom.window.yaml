@@ -1,4 +1,4 @@
-- alias: Bathroom - Heating - Window State
+- alias: Heating - Bathroom - Window
   mode: single
 
   # Window state changes
