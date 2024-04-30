@@ -1,15 +1,22 @@
 - alias: Attic - Heating - Schedule
   mode: single
 
-  # WFH schedule changes
   trigger:
+    # Has the state of the schedule just changed
     - platform: state
       entity_id:
         - schedule.attic_wfh
+    # Has anyone just come/left home?
+    - platform: state
+      entity_id:
+        - input_boolean.home_state
+    # Has 15 minutes elapsed?
+    - platform: time_pattern
+      minutes: /15
 
   action:
     - choose:
-        # WFH schedule activated
+        # WFH schedule is active
         - conditions:
             - condition: state
               entity_id: schedule.attic_wfh
@@ -40,7 +47,7 @@
                       target:
                         entity_id: climate.attic
 
-        # WFH schedule deactivated
+        # WFH schedule is not active
         - conditions:
             - condition: state
               entity_id: schedule.attic_wfh

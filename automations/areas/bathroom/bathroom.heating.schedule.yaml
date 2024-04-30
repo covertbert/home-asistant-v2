@@ -1,15 +1,18 @@
 - alias: Bathroom - Heating - Schedule
   mode: single
 
-  # Bathroom schedule changes
   trigger:
+    # Has the state of the schedule just changed
     - platform: state
       entity_id:
         - schedule.bathroom_boost
+    # Has 15 minutes elapsed?
+    - platform: time_pattern
+      minutes: /15
 
   action:
     - choose:
-        # Boost schedule activated
+        # Boost schedule is active
         - conditions:
             - condition: state
               entity_id: schedule.bathroom_boost
@@ -40,7 +43,7 @@
                       target:
                         entity_id: climate.bathroom
 
-        # Daytime schedule deactivated
+        # Boost schedule is not active
         - conditions:
             - condition: state
               entity_id: schedule.bathroom_boost

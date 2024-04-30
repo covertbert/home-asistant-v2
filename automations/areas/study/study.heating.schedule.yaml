@@ -1,11 +1,18 @@
 - alias: Study - Heating - Schedule
   mode: single
 
-  # WFH schedule changes
   trigger:
+    # Has the state of the schedule just changed
     - platform: state
       entity_id:
         - schedule.study_wfh
+    # Has anyone just come/left home?
+    - platform: state
+      entity_id:
+        - input_boolean.home_state
+    # Has 15 minutes elapsed?
+    - platform: time_pattern
+      minutes: /15
 
   # Study window is closed
   condition:

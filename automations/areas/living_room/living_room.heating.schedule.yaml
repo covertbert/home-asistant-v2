@@ -1,11 +1,18 @@
 - alias: Living Room - Heating - Schedule
   mode: single
 
-  # Bedroom schedule changes
   trigger:
+    # Has the state of the schedule just changed
     - platform: state
       entity_id:
         - schedule.living_room_evening
+    # Has anyone just come/left home?
+    - platform: state
+      entity_id:
+        - input_boolean.home_state
+    # Has 15 minutes elapsed?
+    - platform: time_pattern
+      minutes: /15
 
   action:
     - choose:

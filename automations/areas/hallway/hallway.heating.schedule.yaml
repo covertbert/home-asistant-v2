@@ -1,15 +1,22 @@
 - alias: Hallway - Heating - Schedule
   mode: single
 
-  # Bedroom schedule changes
   trigger:
+    # Has the state of the schedule just changed
     - platform: state
       entity_id:
         - schedule.hallway_daytime
+    # Has anyone just come/left home?
+    - platform: state
+      entity_id:
+        - input_boolean.home_state
+    # Has 15 minutes elapsed?
+    - platform: time_pattern
+      minutes: /15
 
   action:
     - choose:
-        # Daytime schedule activated
+        # Daytime schedule is active
         - conditions:
             - condition: state
               entity_id: schedule.hallway_daytime
@@ -40,7 +47,7 @@
                       target:
                         entity_id: climate.hallway
 
-        # Daytime schedule deactivated
+        # Daytime schedule is not active
         - conditions:
             - condition: state
               entity_id: schedule.hallway_daytime
