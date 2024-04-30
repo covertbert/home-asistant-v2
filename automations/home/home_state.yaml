@@ -4,29 +4,27 @@
   trigger:
     - platform: state
       entity_id:
-        - zone.home
-      attribute: persons
+        - group.family
 
   action:
     - choose:
-        # home zone has people in it
+        # Family comes home
         - conditions:
-            - condition: numeric_state
-              entity_id: zone.home
-              attribute: persons
-              above: 0
+            - condition: state
+              entity_id: group.family
+              state: home
           sequence:
             - service: input_boolean.turn_on
               target:
                 entity_id: input_boolean.home_state
 
-        # home zone does *not* have people in it
+        # Family leaves home
         - conditions:
-            - condition: numeric_state
-              entity_id: zone.home
-              attribute: persons
-              below: 1
+            - condition: state
+              entity_id: group.family
+              state: not_home
           sequence:
             - service: input_boolean.turn_off
               target:
-                entity_id: input_boolean.home_state
+                entity_id:
+                  - input_boolean.home_state
