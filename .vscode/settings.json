@@ -2,5 +2,8 @@
   "files.associations": {
     "*.yaml": "home-assistant",
     "{lefthook,main,mock_secrets}.yaml": "yaml"
+  },
+  "material-icon-theme.files.associations": {
+    "*.yaml": "yaml"
   }
 }
