@@ -6,11 +6,15 @@
     - platform: state
       entity_id:
         - input_boolean.cheap_electricity
-    # Time triggers to avoid dehumidifier turning on when we're in bed
+    # Time triggers at all possible wake up times in the week.
+    # We check further down to see whether the dehumidifier schedule
+    # is active yet on that day. Offset by 1 minute to avoid any race conditions
     - platform: time
-      at: "08:00:00"
+      at: "07:01:00"
     - platform: time
-      at: "09:00:00"
+      at: "07:31:00"
+    - platform: time
+      at: "08:31:00"
 
   action:
     - choose:
