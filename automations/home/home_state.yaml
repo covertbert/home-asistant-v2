@@ -18,11 +18,14 @@
               target:
                 entity_id: input_boolean.home_state
 
-        # Family leaves home
+        # Family leaves home & there are no guests
         - conditions:
             - condition: state
               entity_id: group.family
               state: not_home
+            - condition: state
+              entity_id: input_boolean.guest_state
+              state: "off"
           sequence:
             - service: input_boolean.turn_off
               target:
