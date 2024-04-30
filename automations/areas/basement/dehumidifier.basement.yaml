@@ -1,0 +1,30 @@
+- alias: Dehumidifier - Basement - Toggle
+  mode: single
+
+  trigger:
+    # Cheap Electricity boolean has a state change
+    - platform: state
+      entity_id:
+        - input_boolean.cheap_electricity
+
+  action:
+    - choose:
+        # Electricity is cheap
+        - conditions:
+            - condition: state
+              entity_id: input_boolean.cheap_electricity
+              state: "on"
+          sequence:
+            - service: switch.turn_on
+              target:
+                entity_id: switch.dehumidifier_basement_switch
+
+        # Electricity is *not* cheap
+        - conditions:
+            - condition: state
+              entity_id: input_boolean.cheap_electricity
+              state: "off"
+          sequence:
+            - service: switch.turn_off
+              target:
+                entity_id: switch.dehumidifier_basement_switch
