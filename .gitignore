@@ -53,4 +53,6 @@ secrets.yaml
 !.gitignore
 !.prettierignore
 !.prettierrc
-!README.
+!.vscode
+!.vscode/settings.json
+!README.md
