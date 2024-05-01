@@ -17,7 +17,9 @@
           sequence:
             - service: switch.turn_on
               target:
-                entity_id: switch.study_workstation_switch
+                entity_id:
+                  - switch.study_workstation_switch
+                  - light.desk
 
         # Schedule is *not* active
         - conditions:
@@ -29,3 +31,4 @@
               target:
                 entity_id:
                   - switch.study_workstation_switch
+                  - light.desk
