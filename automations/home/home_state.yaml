@@ -5,14 +5,20 @@
     - platform: state
       entity_id:
         - group.family
+        - input_boolean.guest_state
 
   action:
     - choose:
-        # Family comes home
+        # Family comes home or guest state is turned on
         - conditions:
-            - condition: state
-              entity_id: group.family
-              state: home
+            - condition: or
+              conditions:
+                - condition: state
+                  entity_id: group.family
+                  state: home
+                - condition: state
+                  entity_id: input_boolean.guest_state
+                  state: "on"
           sequence:
             - service: input_boolean.turn_on
               target:
