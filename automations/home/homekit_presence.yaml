@@ -1,0 +1,12 @@
+- alias: Homekit Presence - Toggle
+  mode: single
+
+  trigger:
+    - entity_id: input_boolean.bertie_present
+      platform: state
+
+  action:
+    - data_template:
+        dev_id: homekit_{{ trigger.to_state.name }}
+        location_name: "{{ 'home' if trigger.to_state.state == 'on' else 'not_home' }}"
+      service: device_tracker.see
