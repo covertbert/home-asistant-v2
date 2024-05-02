@@ -7,6 +7,8 @@
       platform: state
     - entity_id: input_boolean.stoof_present
       platform: state
+    - entity_id: input_boolean.housesitter_present
+      platform: state
 
   action:
     - service: device_tracker.see
