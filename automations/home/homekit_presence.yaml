@@ -1,5 +1,6 @@
 - alias: Homekit Presence - Toggle
-  mode: single
+  mode: parallel
+  max: 10
 
   trigger:
     - entity_id: input_boolean.bertie_present
