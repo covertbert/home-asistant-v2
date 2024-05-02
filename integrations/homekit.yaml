@@ -1,0 +1,8 @@
+---
+homekit:
+  - filter:
+      include_entities:
+        - light.tv_strip
+        - switch.dehumidifier_basement_switch
+        - switch.dehumidifier_bedroom_switch
+        - input_boolean.bertie_present
