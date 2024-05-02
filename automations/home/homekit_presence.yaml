@@ -9,7 +9,7 @@
       platform: state
 
   action:
-    - data_template:
+    - service: device_tracker.see
+      data_template:
         dev_id: homekit_{{ trigger.to_state.name }}
         location_name: "{{ 'home' if trigger.to_state.state == 'on' else 'not_home' }}"
-      service: device_tracker.see
