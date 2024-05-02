@@ -5,6 +5,8 @@
   trigger:
     - entity_id: input_boolean.bertie_present
       platform: state
+    - entity_id: input_boolean.stoof_present
+      platform: state
 
   action:
     - data_template:

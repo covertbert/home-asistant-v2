@@ -6,3 +6,4 @@ homekit:
         - switch.dehumidifier_basement_switch
         - switch.dehumidifier_bedroom_switch
         - input_boolean.bertie_present
+        - input_boolean.stoof_present
