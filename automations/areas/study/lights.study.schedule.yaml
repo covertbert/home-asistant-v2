@@ -6,11 +6,11 @@
       entity_id:
         - schedule.study_wfh
 
-  # Someone is home
+  # Bertie is home
   condition:
     - condition: state
-      entity_id: input_boolean.home_state
-      state: "on"
+      entity_id: person.bertie
+      state: "home"
 
   action:
     - choose:
