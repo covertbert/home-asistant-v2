@@ -2,37 +2,41 @@
   mode: single
 
   trigger:
-    - platform: state
-      entity_id:
-        - schedule.study_wfh
+    # Is the sun about to set
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      below: 5
 
-  # Bertie is home
+    # Is the time 1am
+    - platform: time
+      at: "01:00:00"
+
   condition:
+    # Someone is home
     - condition: state
-      entity_id: person.bertie
-      state: "home"
+      entity_id: input_boolean.home_state
+      state: "on"
 
   action:
     - choose:
-        # Schedule is active
         - conditions:
-            - condition: state
-              entity_id: schedule.study_wfh
-              state: "on"
+            - condition: time
+              after: "14:30:00"
+              before: "23:59:00"
           sequence:
             - service: light.turn_on
               target:
-                entity_id: light.desk
+                entity_id: light.study_corner
               data:
                 brightness_pct: 100
 
-        # Schedule is *not* active
         - conditions:
-            - condition: state
-              entity_id: schedule.study_wfh
-              state: "off"
+            - condition: time
+              after: "23:59:00"
+              before: "06:00:00"
           sequence:
             - service: light.turn_off
               target:
                 entity_id:
-                  - light.desk
+                  - light.study_corner
