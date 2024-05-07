@@ -17,7 +17,7 @@
             - condition: numeric_state
               entity_id: sun.sun
               attribute: elevation
-              below: 50
+              below: 5
           sequence:
             - service: light.turn_on
               target:
