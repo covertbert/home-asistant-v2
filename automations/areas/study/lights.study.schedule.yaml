@@ -14,7 +14,7 @@
 
   action:
     - choose:
-        # Turn light on when WFH schedule starts
+        # Schedule is active
         - conditions:
             - condition: state
               entity_id: schedule.study_wfh
@@ -26,7 +26,7 @@
               data:
                 brightness_pct: 100
 
-        # Turn light off when WFH schedule ends
+        # Schedule is *not* active
         - conditions:
             - condition: state
               entity_id: schedule.study_wfh
