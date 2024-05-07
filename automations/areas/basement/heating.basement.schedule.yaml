@@ -20,7 +20,7 @@
           sequence:
             - service: climate.set_temperature
               data:
-                temperature: 18
+                temperature: 19
               target:
                 entity_id: climate.basement
 
@@ -32,6 +32,6 @@
           sequence:
             - service: climate.set_temperature
               data:
-                temperature: 17
+                temperature: 18
               target:
                 entity_id: climate.basement
