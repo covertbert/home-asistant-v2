@@ -6,6 +6,12 @@
       entity_id:
         - schedule.study_wfh
 
+  # Someone is home
+  condition:
+    - condition: state
+      entity_id: input_boolean.home_state
+      state: "on"
+
   action:
     - choose:
         # Turn light on when WFH schedule starts
