@@ -1,0 +1,44 @@
+- alias: Lights - Home - Presence
+  mode: single
+
+  trigger:
+    # Has anyone just come/left home?
+    - platform: state
+      entity_id:
+        - input_boolean.home_state
+
+  action:
+    - choose:
+        # Someone is home
+        - conditions:
+            - condition: state
+              entity_id: input_boolean.home_state
+              state: "on"
+            - condition: numeric_state
+              entity_id: sun.sun
+              attribute: elevation
+              below: 50
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id:
+                  - light.bedroom
+                  - light.landing
+                  - light.living_room
+                  - light.study_corner
+              data:
+                brightness_pct: 100
+
+        # No one is home
+        - conditions:
+            - condition: state
+              entity_id: input_boolean.home_state
+              state: "off"
+          sequence:
+            - service: light.turn_off
+              target:
+                entity_id:
+                  - light.bedroom
+                  - light.landing
+                  - light.living_room
+                  - light.study

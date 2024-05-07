@@ -22,7 +22,6 @@
     - service: light.turn_on
       target:
         entity_id:
-          - light.bertie
-          - light.stoof
+          - light.bedroom
       data:
         brightness_pct: 100
