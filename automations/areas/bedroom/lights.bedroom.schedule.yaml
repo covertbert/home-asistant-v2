@@ -1,0 +1,28 @@
+- alias: Lights - Bedroom - Schedule
+  mode: single
+
+  trigger:
+    # Is the time 2030
+    - platform: time
+      at: "20:30:00"
+
+  # Specifically bertie or stoof are home
+  condition:
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: person.bertie
+          state: home
+        - condition: state
+          entity_id: person.stoof
+          state: home
+
+  # Turn on bedroom lights
+  action:
+    - service: light.turn_on
+      target:
+        entity_id:
+          - light.bertie
+          - light.stoof
+      data:
+        brightness_pct: 100
