@@ -35,6 +35,12 @@
               entity_id: input_boolean.home_state
               state: "off"
           sequence:
+            # Turn off the study workstation
+            - service: switch.turn_off
+              target:
+                entity_id:
+                  - switch.study_workstation_switch
+            # Turn off all the lights
             - service: light.turn_off
               target:
                 entity_id:

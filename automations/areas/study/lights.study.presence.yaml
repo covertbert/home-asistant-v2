@@ -1,0 +1,27 @@
+- alias: Lights - Study - Presence
+  mode: single
+
+  # Has anyone just come home?
+  trigger:
+    - platform: state
+      entity_id:
+        - input_boolean.home_state
+      to: "on"
+
+  # WFH Schedule is active
+  condition:
+    - condition: state
+      entity_id: schedule.study_wfh
+      state: "on"
+
+  # Turn on the study workstation and desk lamp
+  action:
+    - service: switch.turn_on
+      target:
+        entity_id:
+          - switch.study_workstation_switch
+    - service: light.turn_on
+      target:
+        entity_id: light.desk
+      data:
+        brightness_pct: 100
