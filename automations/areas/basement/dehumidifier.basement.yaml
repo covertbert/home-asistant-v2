@@ -2,28 +2,28 @@
   mode: single
 
   trigger:
-    # Cheap Electricity boolean has a state change
+    # Electricity price changes
     - platform: state
       entity_id:
-        - input_boolean.cheap_electricity
+        - sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
 
   action:
     - choose:
-        # Electricity is cheap
+        # Electricity is below 20p - turn on
         - conditions:
-            - condition: state
-              entity_id: input_boolean.cheap_electricity
-              state: "on"
+            - condition: numeric_state
+              entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
+              below: 0.20
           sequence:
             - service: switch.turn_on
               target:
                 entity_id: switch.dehumidifier_basement_switch
 
-        # Electricity is *not* cheap
+        # Electricity is above 20p - turn off
         - conditions:
-            - condition: state
-              entity_id: input_boolean.cheap_electricity
-              state: "off"
+            - condition: numeric_state
+              entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
+              above: 0.20
           sequence:
             - service: switch.turn_off
               target:
