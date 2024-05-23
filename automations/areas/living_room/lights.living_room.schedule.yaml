@@ -30,7 +30,7 @@
                 entity_id: light.living_room
               data:
                 kelvin: 2600
-                brightness_pct: 100
+                brightness_pct: 70
 
         - conditions:
             - condition: time
