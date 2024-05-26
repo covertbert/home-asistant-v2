@@ -29,7 +29,8 @@
               target:
                 entity_id: light.hare
               data:
-                brightness_pct: 100
+                kelvin: 2600
+                brightness_pct: 70
 
         - conditions:
             - condition: time

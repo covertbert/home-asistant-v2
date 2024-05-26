@@ -6,7 +6,7 @@
     - platform: numeric_state
       entity_id: sun.sun
       attribute: elevation
-      below: 6
+      below: 7
 
     # Is the time 1am
     - platform: time
