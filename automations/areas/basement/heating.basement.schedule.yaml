@@ -6,9 +6,9 @@
     - platform: state
       entity_id:
         - input_boolean.home_state
-    # Has 15 minutes elapsed?
+    # Has 60 minutes elapsed?
     - platform: time_pattern
-      minutes: /15
+      minutes: /60
 
   action:
     - choose:
