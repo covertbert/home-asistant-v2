@@ -8,11 +8,15 @@
 
   action:
     - choose:
-        # Humidity is high
+        # Basement humidity is higher than 70% and dehumidifier is on
         - conditions:
             - condition: numeric_state
               entity_id: sensor.basement_humidity
               above: 70
+            - condition: state
+              entity_id: switch.dehumidifier_basement_switch
+              state: "on"
+
           sequence:
             - service: climate.set_temperature
               data:
@@ -20,14 +24,10 @@
               target:
                 entity_id: climate.basement
 
-        # Humidity is not high
-        - conditions:
-            - condition: numeric_state
-              entity_id: sensor.basement_humidity
-              below: 70
-          sequence:
-            - service: climate.set_temperature
-              data:
-                temperature: 17
-              target:
-                entity_id: climate.basement
+      # Above conditions not met so default to 18 degrees
+      default:
+        - service: climate.set_temperature
+          data:
+            temperature: 18
+          target:
+            entity_id: climate.basement
