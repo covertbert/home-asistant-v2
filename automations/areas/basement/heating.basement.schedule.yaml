@@ -2,10 +2,6 @@
   mode: single
 
   trigger:
-    # Has anyone just come/left home?
-    - platform: state
-      entity_id:
-        - input_boolean.home_state
     # Has 15 minutes elapsed?
     - platform: time_pattern
       minutes: /15
