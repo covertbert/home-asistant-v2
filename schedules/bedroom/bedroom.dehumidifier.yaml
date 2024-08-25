@@ -2,19 +2,19 @@
 bedroom_dehumidifier:
   name: "Bedroom - Dehumidifier"
   monday:
-    - from: "07:00:00"
+    - from: "08:00:00"
       to: "20:00:00"
   tuesday:
-    - from: "07:30:00"
+    - from: "08:00:00"
       to: "20:00:00"
   wednesday:
-    - from: "07:30:00"
+    - from: "08:00:00"
       to: "20:00:00"
   thursday:
-    - from: "07:30:00"
+    - from: "08:00:00"
       to: "20:00:00"
   friday:
-    - from: "07:30:00"
+    - from: "08:00:00"
       to: "20:00:00"
   saturday:
     - from: "08:30:00"
