@@ -12,7 +12,7 @@
               entity_id: input_boolean.bertie_present
               state: "on"
           then:
-            - service: device_tracker.see
+            - action: device_tracker.see
               data:
                 dev_id: homekit_bertie
                 location_name: "home"
@@ -21,7 +21,7 @@
               entity_id: input_boolean.stoof_present
               state: "on"
           then:
-            - service: device_tracker.see
+            - action: device_tracker.see
               data:
                 dev_id: homekit_stoof
                 location_name: "home"
@@ -30,7 +30,7 @@
               entity_id: input_boolean.housesitter_present
               state: "on"
           then:
-            - service: device_tracker.see
+            - action: device_tracker.see
               data:
                 dev_id: homekit_housesitter
                 location_name: "home"

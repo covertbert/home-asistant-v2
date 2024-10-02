@@ -15,7 +15,7 @@
               entity_id: binary_sensor.upstairs_windows
               state: "on"
           sequence:
-            - service: climate.turn_off
+            - action: climate.turn_off
               target:
                 entity_id: climate.study
 
@@ -32,7 +32,7 @@
                       entity_id: schedule.study_wfh
                       state: "on"
                   sequence:
-                    - service: climate.set_temperature
+                    - action: climate.set_temperature
                       data:
                         temperature: 20
                       target:
@@ -44,7 +44,7 @@
                       entity_id: schedule.study_wfh
                       state: "off"
                   sequence:
-                    - service: climate.set_temperature
+                    - action: climate.set_temperature
                       data:
                         temperature: 18
                       target:

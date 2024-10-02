@@ -19,7 +19,7 @@
 
           # Set the device_tracker to "home" with the id interpolated from the
           sequence:
-            - service: device_tracker.see
+            - action: device_tracker.see
               data_template:
                 dev_id: homekit_{{ trigger.to_state.name }}
                 location_name: "home"
@@ -31,7 +31,7 @@
 
           # Set the device_tracker to "not_home" with the id interpolated from the trigger
           sequence:
-            - service: device_tracker.see
+            - action: device_tracker.see
               data_template:
                 dev_id: homekit_{{ trigger.to_state.name }}
                 location_name: "not_home"

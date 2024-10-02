@@ -16,11 +16,11 @@
 
   # Turn on the study workstation and desk lamp
   action:
-    - service: switch.turn_on
+    - action: switch.turn_on
       target:
         entity_id:
           - switch.study_workstation_switch
-    - service: light.turn_on
+    - action: light.turn_on
       target:
         entity_id: light.desk
       data:

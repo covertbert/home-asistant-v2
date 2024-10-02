@@ -25,7 +25,7 @@
               after: "14:30:00"
               before: "23:59:00"
           sequence:
-            - service: light.turn_on
+            - action: light.turn_on
               target:
                 entity_id: light.study_corner
               data:
@@ -37,7 +37,7 @@
               after: "23:59:00"
               before: "06:00:00"
           sequence:
-            - service: light.turn_off
+            - action: light.turn_off
               target:
                 entity_id:
                   - light.study_corner

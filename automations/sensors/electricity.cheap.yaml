@@ -12,7 +12,7 @@
               entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
               above: 0.16
           sequence:
-            - service: input_boolean.turn_off
+            - action: input_boolean.turn_off
               target:
                 entity_id:
                   - input_boolean.cheap_electricity
@@ -21,6 +21,6 @@
               entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
               below: 0.16
           sequence:
-            - service: input_boolean.turn_on
+            - action: input_boolean.turn_on
               target:
                 entity_id: input_boolean.cheap_electricity

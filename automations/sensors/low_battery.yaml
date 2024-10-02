@@ -12,6 +12,6 @@
         - sensor.study_window_battery
 
   action:
-    - service: notify.mobile_app_berties_iphone
+    - action: notify.mobile_app_berties_iphone
       data:
         message: 🔋 The {{ state_attr(trigger.entity_id, 'friendly_name') }} level is {{ trigger.to_state.state }}

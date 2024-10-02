@@ -7,6 +7,6 @@
       local_only: false
       webhook_id: "-Z7gIJKDlN9QKCG6poK8q67CT"
   action:
-    - service: shell_command.git_pull
-    - service: homeassistant.check_config
-    - service: homeassistant.restart
+    - action: shell_command.git_pull
+    - action: homeassistant.check_config
+    - action: homeassistant.restart

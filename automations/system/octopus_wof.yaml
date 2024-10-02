@@ -9,7 +9,7 @@
         - sensor.octopus_energy_a_e94ebeba_wheel_of_fortune_spins_gas
 
   action:
-    - service: persistent_notification.create
+    - action: persistent_notification.create
       data:
         title: Wheel of Fortune spins available
         message: Octopus - Wheel of Fortune spins available

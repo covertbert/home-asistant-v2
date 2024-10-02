@@ -16,7 +16,7 @@
                   entity_id: group.family
                   state: home
           sequence:
-            - service: input_boolean.turn_on
+            - action: input_boolean.turn_on
               target:
                 entity_id: input_boolean.home_state
 
@@ -26,7 +26,7 @@
               entity_id: group.family
               state: not_home
           sequence:
-            - service: input_boolean.turn_off
+            - action: input_boolean.turn_off
               target:
                 entity_id:
                   - input_boolean.home_state

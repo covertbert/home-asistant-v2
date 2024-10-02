@@ -19,7 +19,7 @@
               attribute: elevation
               below: 5
           sequence:
-            - service: light.turn_on
+            - action: light.turn_on
               target:
                 entity_id:
                   - light.bedroom
@@ -36,12 +36,12 @@
               state: "off"
           sequence:
             # Turn off the study workstation
-            - service: switch.turn_off
+            - action: switch.turn_off
               target:
                 entity_id:
                   - switch.study_workstation_switch
             # Turn off all the lights
-            - service: light.turn_off
+            - action: light.turn_off
               target:
                 entity_id:
                   - light.bedroom

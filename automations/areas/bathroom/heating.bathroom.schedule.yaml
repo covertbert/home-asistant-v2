@@ -25,7 +25,7 @@
                       entity_id: input_boolean.home_state
                       state: "on"
                   sequence:
-                    - service: climate.set_temperature
+                    - action: climate.set_temperature
                       data:
                         temperature: 25
                       target:
@@ -37,7 +37,7 @@
                       entity_id: input_boolean.home_state
                       state: "off"
                   sequence:
-                    - service: climate.set_temperature
+                    - action: climate.set_temperature
                       data:
                         temperature: 18
                       target:
@@ -49,7 +49,7 @@
               entity_id: schedule.bathroom_boost
               state: "off"
           sequence:
-            - service: climate.set_temperature
+            - action: climate.set_temperature
               data:
                 temperature: 18
               target:
