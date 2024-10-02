@@ -14,6 +14,12 @@
     - platform: time_pattern
       minutes: /15
 
+  # Upstairs windows are closed
+  condition:
+    - condition: state
+      entity_id: binary_sensor.upstairs_windows
+      state: "off"
+
   action:
     - choose:
         # Daytime schedule is active
