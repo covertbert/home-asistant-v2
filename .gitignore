@@ -22,7 +22,7 @@
 !entities/input_booleans
 !entities/groups
 !entities/device_trackers
-!entities/binary_sensors
+!entities/templates
 !integrations
 !recorder
 !schedules
