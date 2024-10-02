@@ -5,14 +5,14 @@
   trigger:
     - platform: state
       entity_id:
-        - binary_sensor.study_window_opening
+        - binary_sensor.upstairs_windows
 
   action:
     - choose:
         # Window is opened
         - conditions:
             - condition: state
-              entity_id: binary_sensor.study_window_opening
+              entity_id: binary_sensor.upstairs_windows
               state: "on"
           sequence:
             - service: climate.turn_off
@@ -22,7 +22,7 @@
         # Window is closed
         - conditions:
             - condition: state
-              entity_id: binary_sensor.study_window_opening
+              entity_id: binary_sensor.upstairs_windows
               state: "off"
           sequence:
             - choose:

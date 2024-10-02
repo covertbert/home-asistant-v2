@@ -14,10 +14,10 @@
     - platform: time_pattern
       minutes: /15
 
-  # Study window is closed
+  # Upstairs windows are closed
   condition:
     - condition: state
-      entity_id: binary_sensor.study_window_opening
+      entity_id: binary_sensor.upstairs_windows
       state: "off"
 
   action:
