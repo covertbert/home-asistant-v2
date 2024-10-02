@@ -1,6 +1,5 @@
 ---
-binary_sensor:
-  - name: "Upstairs Windows"
-    state: >
-      {{ is_state('binary_sensor.landing_window_opening', 'on') or is_state('binary_sensor.study_window_opening', 'on') }}
-    device_class: window
+- name: "Upstairs Windows"
+  state: >
+    {{ is_state('binary_sensor.landing_window_opening', 'on') or is_state('binary_sensor.study_window_opening', 'on') }}
+  device_class: window
