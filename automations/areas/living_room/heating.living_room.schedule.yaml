@@ -14,6 +14,12 @@
     - platform: time_pattern
       minutes: /15
 
+  # Living Room window is closed
+  condition:
+    - condition: state
+      entity_id: binary_sensor.living_room_window_opening
+      state: "off"
+
   action:
     - choose:
         # Daytime schedule activated
