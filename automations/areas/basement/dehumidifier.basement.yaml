@@ -9,21 +9,21 @@
 
   action:
     - choose:
-        # Electricity is below 20p - turn on
+        # Electricity is cheap - turn on
         - conditions:
-            - condition: numeric_state
-              entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
-              below: 0.20
+            - condition: state
+              entity_id: input_boolean.cheap_electricity
+              state: "on"
           sequence:
             - action: switch.turn_on
               target:
                 entity_id: switch.dehumidifier_basement_switch
 
-        # Electricity is above 20p - turn off
+        # Electricity is expensive - turn off
         - conditions:
-            - condition: numeric_state
-              entity_id: sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
-              above: 0.20
+            - condition: state
+              entity_id: input_boolean.cheap_electricity
+              state: "off"
           sequence:
             - action: switch.turn_off
               target:
