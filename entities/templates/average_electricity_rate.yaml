@@ -1,7 +1,7 @@
 ---
 - sensor:
     - name: "Average Electricity Rate"
-      unit_of_measurement: "£/kWh"
+      unit_of_measurement: "GBP/kWh"
       state: >
         {% set rates = state_attr('event.octopus_energy_electricity_22l3444132_1610012177566_current_day_rates', 'rates') %}
         {% if rates %}
