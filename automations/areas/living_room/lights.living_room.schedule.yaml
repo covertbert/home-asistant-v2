@@ -17,6 +17,10 @@
     - condition: state
       entity_id: input_boolean.home_state
       state: "on"
+    # Lights are currently off
+    - condition: state
+      entity_id: light.living_room
+      state: "off"
 
   action:
     - choose:
