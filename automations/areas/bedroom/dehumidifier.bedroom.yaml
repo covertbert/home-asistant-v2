@@ -1,34 +1,34 @@
 - alias: Dehumidifier - Bedroom - Toggle
   mode: single
 
-  trigger:
+  triggers:
     # Cheap Electricity boolean has a state change
-    - platform: state
+    - trigger: state
       entity_id:
         - input_boolean.cheap_electricity
-    # Time triggers at all possible wake up times in the week.
-    # We check further down to see whether the dehumidifier schedule
-    # is active yet on that day. Offset by 1 minute to avoid any race conditions
-    - platform: time
-      at: "07:01:00"
-    - platform: time
-      at: "07:31:00"
-    - platform: time
-      at: "08:31:00"
+    # Bedroom daytime has a state change
+    - trigger: state
+      entity_id:
+        - schedule.bedroom_daytime
 
-  action:
+  actions:
     - choose:
-        # Electricity is *not* cheap
+        # Bedroom schedule is off or electricity is expensive - turn off
         - conditions:
-            - condition: state
-              entity_id: input_boolean.cheap_electricity
-              state: "off"
+            - condition: or
+              conditions:
+                - condition: state
+                  entity_id: input_boolean.cheap_electricity
+                  state: "off"
+                - condition: state
+                  entity_id: schedule.bedroom_daytime
+                  state: "off"
           sequence:
             - action: switch.turn_off
               target:
                 entity_id: switch.dehumidifier_bedroom_switch
 
-        # Electricity is cheap & the dehumidifier schedule is active
+        # Bedroom schedule is on and is electricity is cheap - turn on
         - conditions:
             - condition: state
               entity_id: input_boolean.cheap_electricity
