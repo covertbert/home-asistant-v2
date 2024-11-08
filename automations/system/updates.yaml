@@ -1,7 +1,7 @@
 ---
 - alias: Update Available Notification
-  trigger:
-    - platform: state
+  triggers:
+    - trigger: state
       entity_id:
         - update.home_assistant_core_update
         - update.home_assistant_operating_system_update

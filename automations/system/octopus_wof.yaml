@@ -1,8 +1,8 @@
 - alias: Octopus - Wheel of Fortune spins
   mode: single
 
-  trigger:
-    - platform: numeric_state
+  triggers:
+    - trigger: numeric_state
       above: 0
       entity_id:
         - sensor.octopus_energy_a_e94ebeba_wheel_of_fortune_spins_electricity

@@ -1,7 +1,7 @@
 ---
 - alias: Hass Startup Notification
-  trigger:
-    - platform: homeassistant
+  triggers:
+    - trigger: homeassistant
       event: shutdown
   action:
     - action: notify.mobile_app_berties_iphone
