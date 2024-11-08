@@ -1,15 +1,15 @@
 - alias: Lights - Landing - Schedule
   mode: single
 
-  trigger:
+  triggers:
     # Is the sun about to set
-    - platform: numeric_state
+    - trigger: numeric_state
       entity_id: sun.sun
       attribute: elevation
       below: 5
 
     # Is the time 1am
-    - platform: time
+    - trigger: time
       at: "01:00:00"
 
   condition:

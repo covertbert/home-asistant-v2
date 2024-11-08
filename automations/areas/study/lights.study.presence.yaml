@@ -2,8 +2,8 @@
   mode: single
 
   # Has anyone just come home?
-  trigger:
-    - platform: state
+  triggers:
+    - trigger: state
       entity_id:
         - input_boolean.home_state
       to: "on"

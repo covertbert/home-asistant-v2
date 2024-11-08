@@ -1,9 +1,9 @@
 - alias: Dehumidifier - Basement - Toggle
   mode: single
 
-  trigger:
+  triggers:
     # Electricity price changes
-    - platform: state
+    - trigger: state
       entity_id:
         - sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate
 

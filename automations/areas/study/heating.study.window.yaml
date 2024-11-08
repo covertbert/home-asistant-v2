@@ -2,8 +2,8 @@
   mode: single
 
   # Window state changes
-  trigger:
-    - platform: state
+  triggers:
+    - trigger: state
       entity_id:
         - binary_sensor.upstairs_windows
 

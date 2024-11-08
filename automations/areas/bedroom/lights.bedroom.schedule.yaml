@@ -1,9 +1,9 @@
 - alias: Lights - Bedroom - Schedule
   mode: single
 
-  trigger:
+  triggers:
     # Is the time 2030
-    - platform: time
+    - trigger: time
       at: "20:30:00"
 
   # Specifically bertie or stoof are home

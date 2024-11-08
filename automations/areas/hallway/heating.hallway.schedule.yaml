@@ -1,17 +1,17 @@
 - alias: Heating - Hallway - Schedule
   mode: single
 
-  trigger:
+  triggers:
     # Has the state of the schedule just changed
-    - platform: state
+    - trigger: state
       entity_id:
         - schedule.hallway_daytime
     # Has anyone just come/left home?
-    - platform: state
+    - trigger: state
       entity_id:
         - input_boolean.home_state
     # Has 15 minutes elapsed?
-    - platform: time_pattern
+    - trigger: time_pattern
       minutes: /15
 
   # Living Room window is closed

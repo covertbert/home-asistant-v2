@@ -1,9 +1,9 @@
 - alias: Workstation - Study - Schedule
   mode: single
 
-  trigger:
+  triggers:
     # Schedule state changes
-    - platform: state
+    - trigger: state
       entity_id:
         - schedule.study_wfh
 
