@@ -1,8 +1,8 @@
 - alias: Home State - Update
   mode: single
 
-  trigger:
-    - platform: state
+  triggers:
+    - trigger: state
       entity_id:
         - group.family
 

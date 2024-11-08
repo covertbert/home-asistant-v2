@@ -2,13 +2,13 @@
   mode: parallel
   max: 10
 
-  trigger:
-    - entity_id: input_boolean.bertie_present
-      platform: state
-    - entity_id: input_boolean.stoof_present
-      platform: state
-    - entity_id: input_boolean.housesitter_present
-      platform: state
+  triggers:
+    - trigger: state
+      entity_id: input_boolean.bertie_present
+    - trigger: state
+      entity_id: input_boolean.stoof_present
+    - trigger: state
+      entity_id: input_boolean.housesitter_present
 
   action:
     - choose:

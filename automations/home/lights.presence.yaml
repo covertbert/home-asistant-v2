@@ -1,9 +1,9 @@
 - alias: Lights - Home - Presence
   mode: single
 
-  trigger:
+  triggers:
     # Has anyone just come/left home?
-    - platform: state
+    - trigger: state
       entity_id:
         - input_boolean.home_state
 

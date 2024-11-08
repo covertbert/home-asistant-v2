@@ -1,8 +1,8 @@
 - alias: Homekit Presence - Restart
   mode: single
 
-  trigger:
-    - platform: homeassistant
+  triggers:
+    - trigger: homeassistant
       event: start
 
   action:
