@@ -1,11 +1,11 @@
 ---
 - alias: Sensor Low Battery
-  trigger:
-    - platform: numeric_state
+  triggers:
+    - trigger: numeric_state
       below: 10
       entity_id:
         - sensor.study_window_battery
-    - platform: state
+    - trigger: state
       to: unavailable
       for: 06:00:00
       entity_id:
