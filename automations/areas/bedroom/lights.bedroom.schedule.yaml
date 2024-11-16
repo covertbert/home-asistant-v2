@@ -24,4 +24,5 @@
         entity_id:
           - light.bedroom
       data:
-        brightness_pct: 100
+        kelvin: 2600
+        brightness_pct: 70
