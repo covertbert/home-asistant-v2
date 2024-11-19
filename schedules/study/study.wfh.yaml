@@ -1,9 +1,6 @@
 ---
 study_wfh:
   name: "Study - WFH"
-  tuesday:
-    - from: "08:30:00"
-      to: "18:30:00"
   wednesday:
     - from: "08:30:00"
       to: "18:30:00"
