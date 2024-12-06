@@ -9,14 +9,14 @@
     - choose:
         - conditions:
             - condition: template
-              value_template: "{{ states('sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate') | float > states('sensor.average_electricity_rate') | float }}"
+              value_template: "{{ states('sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate') | float > (states('sensor.average_electricity_rate') | float + 0.03) }}"
           sequence:
             - action: input_boolean.turn_off
               target:
                 entity_id: input_boolean.cheap_electricity
         - conditions:
             - condition: template
-              value_template: "{{ states('sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate') | float < states('sensor.average_electricity_rate') | float }}"
+              value_template: "{{ states('sensor.octopus_energy_electricity_22l3444132_1610012177566_current_rate') | float <= (states('sensor.average_electricity_rate') | float + 0.03) }}"
           sequence:
             - action: input_boolean.turn_on
               target:
