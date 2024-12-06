@@ -5,7 +5,7 @@
       state: >
         {% set rates = state_attr('event.octopus_energy_electricity_22l3444132_1610012177566_current_day_rates', 'rates') %}
         {% if rates %}
-          {{ rates | map(attribute='value_inc_vat') | map('float') | sum / rates | length }}
+          {{ (rates | map(attribute='value_inc_vat') | map('float') | sum / rates | length) + 0.03 }}
         {% else %}
           0
         {% endif %}
