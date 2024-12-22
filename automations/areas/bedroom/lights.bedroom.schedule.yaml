@@ -25,4 +25,4 @@
           - light.bedroom
       data:
         kelvin: 2600
-        brightness_pct: 70
+        brightness_pct: 100
