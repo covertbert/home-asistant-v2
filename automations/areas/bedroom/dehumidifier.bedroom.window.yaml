@@ -26,10 +26,13 @@
               state: "off"
           sequence:
             - choose:
-                # Bedroom daytime schedule active
+                # Bedroom daytime schedule active and electricity is cheap
                 - conditions:
                     - condition: state
                       entity_id: schedule.bedroom_daytime
+                      state: "on"
+                    - condition: state
+                      entity_id: input_boolean.cheap_electricity
                       state: "on"
                   sequence:
                     - action: switch.turn_on
