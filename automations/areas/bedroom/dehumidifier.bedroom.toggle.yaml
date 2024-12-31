@@ -28,7 +28,7 @@
               target:
                 entity_id: switch.dehumidifier_bedroom_switch
 
-        # Bedroom schedule is on and is electricity is cheap - turn on
+        # Bedroom schedule is on, window is closed and electricity is cheap - turn on
         - conditions:
             - condition: state
               entity_id: input_boolean.cheap_electricity
@@ -36,6 +36,9 @@
             - condition: state
               entity_id: schedule.bedroom_dehumidifier
               state: "on"
+            - condition: state
+              entity_id: binary_sensor.bedroom_window_opening
+              state: "off"
           sequence:
             - action: switch.turn_on
               target:
