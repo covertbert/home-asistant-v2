@@ -2,37 +2,28 @@
   mode: single
 
   triggers:
-    # Cheap Electricity boolean has a state change
+    # Bedroom dehumidifier schedule has a state change
     - trigger: state
       entity_id:
-        - input_boolean.cheap_electricity
-    # Bedroom daytime has a state change
-    - trigger: state
-      entity_id:
-        - schedule.bedroom_daytime
+        - schedule.bedroom_dehumidifier
+    # Has 15 minutes elapsed?
+    - trigger: time_pattern
+      minutes: /15
 
   actions:
     - choose:
-        # Bedroom schedule is off or electricity is expensive - turn off
+        # Bedroom dehumidifier schedule is off - turn off
         - conditions:
-            - condition: or
-              conditions:
-                - condition: state
-                  entity_id: input_boolean.cheap_electricity
-                  state: "off"
-                - condition: state
-                  entity_id: schedule.bedroom_daytime
-                  state: "off"
+            - condition: state
+              entity_id: schedule.bedroom_dehumidifier
+              state: "off"
           sequence:
             - action: switch.turn_off
               target:
                 entity_id: switch.dehumidifier_bedroom_switch
 
-        # Bedroom schedule is on, window is closed and electricity is cheap - turn on
+        # Bedroom dehumidifier schedule is on, window is closed and electricity is cheap - turn on
         - conditions:
-            - condition: state
-              entity_id: input_boolean.cheap_electricity
-              state: "on"
             - condition: state
               entity_id: schedule.bedroom_dehumidifier
               state: "on"

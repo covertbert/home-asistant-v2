@@ -26,25 +26,22 @@
               state: "off"
           sequence:
             - choose:
-                # Bedroom daytime schedule active and electricity is cheap
+                # Bedroom dehumidifier schedule active
                 - conditions:
                     - condition: state
-                      entity_id: schedule.bedroom_daytime
-                      state: "on"
-                    - condition: state
-                      entity_id: input_boolean.cheap_electricity
+                      entity_id: schedule.bedroom_dehumidifier
                       state: "on"
                   sequence:
                     - action: switch.turn_on
                       target:
                         entity_id: switch.dehumidifier_bedroom_switch
 
-                # Bedroom daytime schedule not active
+                # Bedroom dehumidifier schedule not active
                 - conditions:
                     - condition: state
-                      entity_id: schedule.bedroom_daytime
+                      entity_id: schedule.bedroom_dehumidifier
                       state: "off"
                   sequence:
-                    - action: switch.turn_on
+                    - action: switch.turn_off
                       target:
                         entity_id: switch.dehumidifier_bedroom_switch
