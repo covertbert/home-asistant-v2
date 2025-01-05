@@ -17,8 +17,8 @@ living_room_evening:
     - from: "17:30:00"
       to: "22:00:00"
   saturday:
-    - from: "17:30:00"
+    - from: "15:30:00"
       to: "22:00:00"
   sunday:
-    - from: "17:30:00"
+    - from: "15:30:00"
       to: "21:00:00"
