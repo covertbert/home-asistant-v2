@@ -21,4 +21,4 @@ jobs:
       - name: Trigger Full Deploy
         shell: bash
         run: |
-          curl -X POST https://homeassistant.mole-anaconda.ts.net/api/webhook/${{ secrets.HA_WEBHOOK_ID}}"
+          curl -X POST "https://homeassistant.mole-anaconda.ts.net/api/webhook/${{ secrets.HA_WEBHOOK_ID}}"
