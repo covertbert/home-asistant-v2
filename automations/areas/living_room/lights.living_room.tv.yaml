@@ -2,8 +2,13 @@
   mode: single
 
   triggers:
-    # Apple TV Plex client has a status change
+    # Apple TV Plex client changes state either from or to "playing"
     - trigger: state
+      from: playing
+      entity_id:
+        - media_player.plex_plex_for_apple_tv_apple_tv
+    - trigger: state
+      to: playing
       entity_id:
         - media_player.plex_plex_for_apple_tv_apple_tv
 
@@ -26,7 +31,7 @@
                 entity_id: light.living_room
               data:
                 kelvin: 2600
-                brightness_pct: 30
+                brightness_pct: 50
 
       # If Plex is not playing, brighten the lights.
       default:
