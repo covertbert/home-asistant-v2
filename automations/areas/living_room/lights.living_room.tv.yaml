@@ -21,7 +21,7 @@
     - condition: numeric_state
       entity_id: sun.sun
       attribute: elevation
-      above: 7
+      below: 7
 
   action:
     # If Plex is playing, dim the lights.
