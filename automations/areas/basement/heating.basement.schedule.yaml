@@ -22,7 +22,7 @@
               data:
                 temperature: 21
               target:
-                entity_id: climate.basement
+                entity_id: climate.tado_trv_basement
 
       # Above conditions not met so default to 18 degrees
       default:
@@ -30,4 +30,4 @@
           data:
             temperature: 18
           target:
-            entity_id: climate.basement
+            entity_id: climate.tado_trv_basement

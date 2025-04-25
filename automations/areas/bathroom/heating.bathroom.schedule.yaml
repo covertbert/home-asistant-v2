@@ -29,7 +29,7 @@
                       data:
                         temperature: 25
                       target:
-                        entity_id: climate.bathroom
+                        entity_id: climate.tado_trv_bathroom
 
                 # No one is home
                 - conditions:
@@ -41,7 +41,7 @@
                       data:
                         temperature: 17
                       target:
-                        entity_id: climate.bathroom
+                        entity_id: climate.tado_trv_bathroom
 
         # Boost schedule is not active
         - conditions:
@@ -53,4 +53,4 @@
               data:
                 temperature: 19
               target:
-                entity_id: climate.bathroom
+                entity_id: climate.tado_trv_bathroom
