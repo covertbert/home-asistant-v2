@@ -17,7 +17,7 @@
           sequence:
             - action: climate.turn_off
               target:
-                entity_id: climate.tado_trv_hallway
+                entity_id: climate.tado_thermostat_hallway
 
         # Window is closed
         - conditions:
@@ -36,7 +36,7 @@
                       data:
                         temperature: 18
                       target:
-                        entity_id: climate.tado_trv_hallway
+                        entity_id: climate.tado_thermostat_hallway
 
                 # Hallway Daytime Schedule is *not* active
                 - conditions:
@@ -48,4 +48,4 @@
                       data:
                         temperature: 18
                       target:
-                        entity_id: climate.tado_trv_hallway
+                        entity_id: climate.tado_thermostat_hallway
