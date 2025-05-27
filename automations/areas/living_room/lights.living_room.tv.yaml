@@ -17,11 +17,6 @@
     - condition: state
       entity_id: input_boolean.home_state
       state: "on"
-    # The sun is low in the sky
-    - condition: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: 7
 
   action:
     # If Plex is playing, dim the lights.
