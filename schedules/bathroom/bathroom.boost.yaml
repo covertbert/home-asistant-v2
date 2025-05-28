@@ -9,7 +9,7 @@ bathroom_boost:
       to: "06:25:00"
   wednesday:
     - from: "05:55:00"
-      to: "06:25:00"
+      to: "06:10:00"
     - from: "18:00:00"
       to: "18:30:00"
   thursday:
