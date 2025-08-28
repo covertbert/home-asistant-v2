@@ -12,7 +12,7 @@
 !automations/areas/kitchen
 !automations/areas/landing
 !automations/areas/living_room
-!automations/areas/study
+!automations/areas/nursery
 !automations/home
 !automations/sensors
 !automations/system
@@ -32,7 +32,7 @@
 !schedules/hallway
 !schedules/kitchen
 !schedules/living_room
-!schedules/study
+!schedules/nursery
 !themes
 !.stubs
 !.github/

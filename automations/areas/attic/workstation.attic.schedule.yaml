@@ -1,11 +1,11 @@
-- alias: Workstation - Study - Schedule
+- alias: Workstation - Attic - Schedule
   mode: single
 
   triggers:
     # Schedule state changes
     - trigger: state
       entity_id:
-        - schedule.study_wfh
+        - schedule.attic_wfh
 
   # Bertie is home
   condition:
@@ -18,30 +18,21 @@
         # Schedule is active
         - conditions:
             - condition: state
-              entity_id: schedule.study_wfh
+              entity_id: schedule.attic_wfh
               state: "on"
           sequence:
             - action: switch.turn_on
               target:
                 entity_id:
                   - switch.study_workstation_switch
-            - action: light.turn_on
-              target:
-                entity_id: light.desk
-              data:
-                brightness_pct: 100
 
         # Schedule is *not* active
         - conditions:
             - condition: state
-              entity_id: schedule.study_wfh
+              entity_id: schedule.attic_wfh
               state: "off"
           sequence:
             - action: switch.turn_off
               target:
                 entity_id:
                   - switch.study_workstation_switch
-            - action: light.turn_off
-              target:
-                entity_id:
-                  - light.desk
