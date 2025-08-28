@@ -24,7 +24,7 @@
             - action: switch.turn_on
               target:
                 entity_id:
-                  - switch.study_workstation_switch
+                  - switch.attic_workstation_switch
 
         # Schedule is *not* active
         - conditions:
@@ -35,4 +35,4 @@
             - action: switch.turn_off
               target:
                 entity_id:
-                  - switch.study_workstation_switch
+                  - switch.attic_workstation_switch

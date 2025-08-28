@@ -39,7 +39,7 @@
             - action: switch.turn_off
               target:
                 entity_id:
-                  - switch.study_workstation_switch
+                  - switch.attic_workstation_switch
             # Turn off all the lights
             - action: light.turn_off
               target:
