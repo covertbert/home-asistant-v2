@@ -3,4 +3,4 @@
     - name: "Upstairs Windows"
       unique_id: windows_upstairs
       state: >
-        {{ is_state('binary_sensor.landing_window_opening', 'on') or is_state('binary_sensor.nursery_window_opening', 'on') or is_state('binary_sensor.bedroom_window_opening', 'on') }}
+        {{ is_state('binary_sensor.landing_window_opening', 'on') or is_state('binary_sensor.bedroom_window_opening', 'on') }}
