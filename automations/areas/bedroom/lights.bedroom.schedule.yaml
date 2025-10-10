@@ -2,9 +2,9 @@
   mode: single
 
   triggers:
-    # Is the time 2030
+    # Is the time 1930
     - trigger: time
-      at: "20:30:00"
+      at: "19:30:00"
 
   # Specifically bertie or stoof are home
   condition:
