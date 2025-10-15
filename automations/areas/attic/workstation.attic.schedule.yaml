@@ -7,6 +7,10 @@
       entity_id:
         - schedule.attic_wfh
 
+    # Bertie arrives home
+    - trigger: state
+      entity_id: person.bertie
+
   # Bertie is home
   condition:
     - condition: state
