@@ -56,4 +56,4 @@
                 entity_id: light.living_room
               data:
                 rgb_color: [255, 0, 0]
-                brightness_pct: 50
+                brightness_pct: 10
