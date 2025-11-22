@@ -2,23 +2,23 @@
 kitchen_evening:
   name: "Kitchen - Evening"
   monday:
-    - from: "16:00:00"
-      to: "21:00:00"
+    - from: "17:00:00"
+      to: "20:30:00"
   tuesday:
-    - from: "16:00:00"
-      to: "21:00:00"
+    - from: "17:00:00"
+      to: "20:30:00"
   wednesday:
-    - from: "16:00:00"
-      to: "21:00:00"
+    - from: "17:00:00"
+      to: "20:30:00"
   thursday:
-    - from: "16:00:00"
-      to: "21:00:00"
+    - from: "17:00:00"
+      to: "20:30:00"
   friday:
-    - from: "16:00:00"
-      to: "21:00:00"
+    - from: "17:00:00"
+      to: "20:30:00"
   saturday:
-    - from: "16:00:00"
-      to: "21:00:00"
+    - from: "17:00:00"
+      to: "20:30:00"
   sunday:
-    - from: "16:00:00"
-      to: "21:00:00"
+    - from: "17:00:00"
+      to: "20:30:00"
