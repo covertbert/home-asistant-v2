@@ -1,12 +1,12 @@
-- alias: Heating - Hallway - Schedule
+- alias: Heating - Downstairs - Schedule
   mode: single
 
   triggers:
     # Has the state of the schedule just changed
     - trigger: state
       entity_id:
-        - schedule.hallway_daytime
-        - schedule.hallway_evening
+        - schedule.downstairs_daytime
+        - schedule.downstairs_evening
     # Has anyone just come/left home?
     - trigger: state
       entity_id:
@@ -33,35 +33,35 @@
               data:
                 temperature: 18
               target:
-                entity_id: climate.hallway
+                entity_id: climate.downstairs
 
         # Evening schedule activated
         - conditions:
             - condition: state
-              entity_id: schedule.hallway_evening
-              state: "on"
-          sequence:
-            - action: climate.set_temperature
-              data:
-                temperature: 22
-              target:
-                entity_id: climate.hallway
-
-        # Daytime schedule activated
-        - conditions:
-            - condition: state
-              entity_id: schedule.hallway_daytime
+              entity_id: schedule.downstairs_evening
               state: "on"
           sequence:
             - action: climate.set_temperature
               data:
                 temperature: 21
               target:
-                entity_id: climate.hallway
+                entity_id: climate.downstairs
+
+        # Daytime schedule activated
+        - conditions:
+            - condition: state
+              entity_id: schedule.downstairs_daytime
+              state: "on"
+          sequence:
+            - action: climate.set_temperature
+              data:
+                temperature: 20
+              target:
+                entity_id: climate.downstairs
 
       default:
         - action: climate.set_temperature
           data:
             temperature: 19
           target:
-            entity_id: climate.hallway
+            entity_id: climate.downstairs

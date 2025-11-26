@@ -8,6 +8,7 @@
 !automations/areas/bathroom
 !automations/areas/basement
 !automations/areas/bedroom
+!automations/areas/downstairs
 !automations/areas/hallway
 !automations/areas/kitchen
 !automations/areas/landing
@@ -29,6 +30,7 @@
 !schedules/attic
 !schedules/bathroom
 !schedules/bedroom
+!schedules/downstairs
 !schedules/hallway
 !schedules/kitchen
 !schedules/living_room

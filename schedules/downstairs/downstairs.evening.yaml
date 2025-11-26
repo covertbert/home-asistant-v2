@@ -1,6 +1,6 @@
 ---
-living_room_evening:
-  name: "Living Room - Evening"
+downstairs_evening:
+  name: "Downstairs - Evening"
   monday:
     - from: "17:00:00"
       to: "20:30:00"
