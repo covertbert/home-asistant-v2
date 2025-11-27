@@ -2,23 +2,23 @@
 bedroom_daytime:
   name: "Bedroom - Daytime"
   monday:
-    - from: "04:30:00"
-      to: "19:00:00"
+    - from: "06:00:00"
+      to: "18:30:00"
   tuesday:
-    - from: "04:30:00"
-      to: "19:00:00"
+    - from: "06:00:00"
+      to: "18:30:00"
   wednesday:
-    - from: "04:30:00"
-      to: "19:00:00"
+    - from: "06:00:00"
+      to: "18:30:00"
   thursday:
-    - from: "04:30:00"
-      to: "19:00:00"
+    - from: "06:00:00"
+      to: "18:30:00"
   friday:
-    - from: "04:30:00"
-      to: "19:00:00"
+    - from: "06:00:00"
+      to: "18:30:00"
   saturday:
-    - from: "04:30:00"
-      to: "19:00:00"
+    - from: "06:00:00"
+      to: "18:30:00"
   sunday:
-    - from: "04:30:00"
-      to: "19:00:00"
+    - from: "06:00:00"
+      to: "18:30:00"
