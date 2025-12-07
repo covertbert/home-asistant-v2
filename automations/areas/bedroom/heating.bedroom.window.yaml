@@ -36,7 +36,7 @@
                   sequence:
                     - action: climate.set_temperature
                       data:
-                        temperature: 20
+                        temperature: 19
                       target:
                         entity_id: climate.bedroom
 
@@ -48,6 +48,6 @@
                   sequence:
                     - action: climate.set_temperature
                       data:
-                        temperature: 19
+                        temperature: 18.5
                       target:
                         entity_id: climate.bedroom
