@@ -2,23 +2,23 @@
 downstairs_daytime:
   name: "Downstairs - Daytime"
   monday:
-    - from: "08:00:00"
+    - from: "06:30:00"
       to: "16:59:00"
   tuesday:
-    - from: "08:00:00"
+    - from: "06:30:00"
       to: "16:59:00"
   wednesday:
-    - from: "08:00:00"
+    - from: "06:30:00"
       to: "16:59:00"
   thursday:
-    - from: "08:00:00"
+    - from: "06:30:00"
       to: "16:59:00"
   friday:
-    - from: "08:00:00"
+    - from: "06:30:00"
       to: "16:59:00"
   saturday:
-    - from: "08:00:00"
+    - from: "06:30:00"
       to: "16:59:00"
   sunday:
-    - from: "08:00:00"
+    - from: "06:30:00"
       to: "16:59:00"
