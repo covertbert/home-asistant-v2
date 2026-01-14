@@ -1,0 +1,24 @@
+---
+nursery_daytime:
+  name: "Nursery - Daytime"
+  monday:
+    - from: "07:30:00"
+      to: "20:00:00"
+  tuesday:
+    - from: "07:30:00"
+      to: "20:00:00"
+  wednesday:
+    - from: "07:30:00"
+      to: "20:00:00"
+  thursday:
+    - from: "07:30:00"
+      to: "20:00:00"
+  friday:
+    - from: "07:30:00"
+      to: "20:00:00"
+  saturday:
+    - from: "07:30:00"
+      to: "20:00:00"
+  sunday:
+    - from: "07:30:00"
+      to: "20:00:00"
