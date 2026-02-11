@@ -15,9 +15,7 @@
               entity_id: binary_sensor.upstairs_windows
               state: "on"
           sequence:
-            - action: climate.set_temperature
-              data:
-                temperature: 5
+            - action: climate.turn_off
               target:
                 entity_id: climate.bedroom
 
@@ -34,6 +32,9 @@
                       entity_id: schedule.bedroom_daytime
                       state: "on"
                   sequence:
+                    - action: climate.turn_on
+                      target:
+                        entity_id: climate.bedroom
                     - action: climate.set_temperature
                       data:
                         temperature: 19
@@ -46,6 +47,9 @@
                       entity_id: schedule.bedroom_daytime
                       state: "off"
                   sequence:
+                    - action: climate.turn_on
+                      target:
+                        entity_id: climate.bedroom
                     - action: climate.set_temperature
                       data:
                         temperature: 18.5

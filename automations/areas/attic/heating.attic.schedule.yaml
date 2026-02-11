@@ -29,6 +29,9 @@
                       entity_id: input_boolean.home_state
                       state: "on"
                   sequence:
+                    - action: climate.turn_on
+                      target:
+                        entity_id: climate.attic
                     - action: climate.set_temperature
                       data:
                         temperature: 21
@@ -41,6 +44,9 @@
                       entity_id: input_boolean.home_state
                       state: "off"
                   sequence:
+                    - action: climate.turn_on
+                      target:
+                        entity_id: climate.attic
                     - action: climate.set_temperature
                       data:
                         temperature: 18
@@ -53,6 +59,9 @@
               entity_id: schedule.attic_wfh
               state: "off"
           sequence:
+            - action: climate.turn_on
+              target:
+                entity_id: climate.attic
             - action: climate.set_temperature
               data:
                 temperature: 19

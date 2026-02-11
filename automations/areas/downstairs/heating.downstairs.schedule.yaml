@@ -29,6 +29,9 @@
               entity_id: input_boolean.home_state
               state: "off"
           sequence:
+            - action: climate.turn_on
+              target:
+                entity_id: climate.downstairs
             - action: climate.set_temperature
               data:
                 temperature: 18
@@ -41,6 +44,9 @@
               entity_id: schedule.downstairs_evening
               state: "on"
           sequence:
+            - action: climate.turn_on
+              target:
+                entity_id: climate.downstairs
             - action: climate.set_temperature
               data:
                 temperature: 20
@@ -53,6 +59,9 @@
               entity_id: schedule.downstairs_daytime
               state: "on"
           sequence:
+            - action: climate.turn_on
+              target:
+                entity_id: climate.downstairs
             - action: climate.set_temperature
               data:
                 temperature: 19
@@ -60,6 +69,9 @@
                 entity_id: climate.downstairs
 
       default:
+        - action: climate.turn_on
+          target:
+            entity_id: climate.downstairs
         - action: climate.set_temperature
           data:
             temperature: 18
