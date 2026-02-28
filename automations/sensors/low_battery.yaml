@@ -1,44 +1,17 @@
 ---
 - alias: Sensor Low Battery
-  mode: queued
-
   triggers:
-    - trigger: event
-      event_type: state_changed
+    - trigger: numeric_state
+      below: 10
+      entity_id:
+        - sensor.nursery_window_battery
+    - trigger: state
+      to: unavailable
+      for: 06:00:00
+      entity_id:
+        - sensor.nursery_window_battery
 
   action:
-    - choose:
-        - conditions:
-            - condition: template
-              value_template: >
-                {% set entity_id = trigger.event.data.entity_id %}
-                {% set new_state = trigger.event.data.new_state %}
-                {% set old_state = trigger.event.data.old_state %}
-                {% if new_state is none or entity_id is none %}
-                  {{ false }}
-                {% else %}
-                  {% set device_class = new_state.attributes.device_class %}
-                  {% set new_value = new_state.state %}
-                  {% set old_value = old_state.state if old_state else none %}
-                  {% set numeric_battery = entity_id.startswith('sensor.')
-                    and (device_class == 'battery' or 'battery' in entity_id)
-                    and new_value not in ['unknown', 'unavailable']
-                    and (new_value | float(101)) <= 10
-                    and (
-                      old_state is none
-                      or old_value in ['unknown', 'unavailable']
-                      or (old_value | float(101)) > 10
-                    )
-                  %}
-                  {% set binary_battery = entity_id.startswith('binary_sensor.')
-                    and device_class == 'battery'
-                    and new_value == 'on'
-                    and (old_state is none or old_value != 'on')
-                  %}
-                  {{ numeric_battery or binary_battery }}
-                {% endif %}
-          sequence:
-            - action: notify.mobile_app_berties_iphone
-              data:
-                message: >-
-                  🔋 The {{ state_attr(trigger.event.data.entity_id, 'friendly_name') or trigger.event.data.entity_id }} battery is low{% if trigger.event.data.new_state.state not in ['on', 'off'] %} ({{ trigger.event.data.new_state.state }}%){% endif %}
+    - action: notify.mobile_app_berties_iphone
+      data:
+        message: 🔋 The {{ state_attr(trigger.entity_id, 'friendly_name') }} level is {{ trigger.to_state.state }}
