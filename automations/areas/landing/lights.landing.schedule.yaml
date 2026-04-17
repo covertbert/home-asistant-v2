@@ -12,6 +12,17 @@
     - trigger: time
       at: "21:00:00"
 
+    # Is the time 7am
+    - trigger: time
+      at: "07:00:00"
+
+    # Has the sun reached its peak (solar noon)
+    - trigger: state
+      entity_id: sun.sun
+      attribute: rising
+      from: true
+      to: false
+
   condition:
     # Someone is home
     - condition: state
@@ -20,6 +31,31 @@
 
   action:
     - choose:
+        - conditions:
+            - condition: time
+              after: "21:00:00"
+              before: "06:00:00"
+          sequence:
+            - action: light.turn_off
+              target:
+                entity_id:
+                  - light.hare
+
+        # Sun has passed its peak — turn off until afternoon
+        - conditions:
+            - condition: state
+              entity_id: sun.sun
+              attribute: rising
+              state: false
+            - condition: time
+              after: "10:00:00"
+              before: "14:30:00"
+          sequence:
+            - action: light.turn_off
+              target:
+                entity_id:
+                  - light.hare
+
         - conditions:
             - condition: time
               after: "14:30:00"
@@ -32,12 +68,15 @@
                 kelvin: 2600
                 brightness_pct: 70
 
+        # Morning — turn on at 7am until solar noon
         - conditions:
             - condition: time
-              after: "21:00:00"
-              before: "06:00:00"
+              after: "06:00:00"
+              before: "14:30:00"
           sequence:
-            - action: light.turn_off
+            - action: light.turn_on
               target:
-                entity_id:
-                  - light.hare
+                entity_id: light.hare
+              data:
+                kelvin: 2600
+                brightness_pct: 70
