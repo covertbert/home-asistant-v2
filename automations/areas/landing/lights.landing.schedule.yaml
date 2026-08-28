@@ -14,7 +14,7 @@
 
     # Is the time 0630
     - trigger: time
-      at: "06:30:00"
+      at: "06:50:00"
 
     # Has the sun reached its peak (solar noon)
     - trigger: state
